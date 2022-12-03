@@ -1,5 +1,4 @@
-﻿using NaucniRad.WPF;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,26 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NaucniRad
+namespace NaucniRad.WPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Explanation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Explanation : Window
     {
-        public MainWindow()
+        public Explanation()
         {
             InitializeComponent();
         }
 
-        private void UvodDaljeClick(object sender, RoutedEventArgs e)
+        private void ExplanationClick(object sender, RoutedEventArgs e)
         {
-            //IspitanikEntry ispitanikEntry = new IspitanikEntry(null);
-            IspitanikEntry ispitanikEntry = new IspitanikEntry();
-            ispitanikEntry.ShowDialog();
+
         }
     }
 }
