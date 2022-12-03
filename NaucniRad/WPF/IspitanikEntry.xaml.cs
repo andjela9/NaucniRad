@@ -20,15 +20,9 @@ namespace NaucniRad.WPF
     public partial class IspitanikEntry : Window
     {
         private Ispitanik noviIspitanik = new Ispitanik();
-        public IspitanikEntry()
+        public IspitanikEntry(Ispitanik unetIspitanik)
         {
             InitializeComponent();
-
-            //noviIspitanik.Age = unetIspitanik.Age;
-            //noviIspitanik.College = unetIspitanik.College;
-            //noviIspitanik.Gender = unetIspitanik.Gender;
-            //noviIspitanik.Course = unetIspitanik.Course;
-            //noviIspitanik.Disability = unetIspitanik.Disability;
             
             this.DataContext= noviIspitanik;
             this.collegeListBox.ItemsSource = new List<String> { "FTN", "MFUNS" };
@@ -133,7 +127,16 @@ namespace NaucniRad.WPF
         {
             if(ValidateInput())
             {
-                this.Close();
+                string disability;
+                if (noviIspitanik.Disability == true)
+                {
+                    disability = "Da";
+                }
+                else {
+                    disability = "ne";
+                }
+                MessageBox.Show("Godine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course
+                    + "\nOsoba sa invaliditetom: " + disability);
             }
             else
             {
