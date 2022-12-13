@@ -118,8 +118,6 @@ namespace NaucniRad.WPF
                 //disabilityVal.ClearValue(Border.BorderBrushProperty);
                 disabilityVal.Visibility = Visibility.Hidden;
             }
-
-
             return retVal;
         }
 

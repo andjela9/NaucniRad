@@ -14,14 +14,16 @@ namespace NaucniRad
         private string gender;
         private string course;
         private bool disability;
+        private int selfAssessment;
 
-        public Ispitanik(int age, string college, string gender, string course, bool disability)
+        public Ispitanik(int age, string college, string gender, string course, bool disability, int selfAssessment)
         {
             this.age = age;
             this.college = college;
             this.gender = gender;
             this.course = course;
             this.disability = disability;
+            this.selfAssessment = selfAssessment;
         }
 
         public Ispitanik() { }
@@ -75,6 +77,15 @@ namespace NaucniRad
             {
                 disability = value;
                 OnPropertyChanged("Disability");
+            }
+        }
+        public int SelfAssessment
+        {
+            get { return selfAssessment; }
+            set
+            {
+                age = value;
+                OnPropertyChanged("SelfAssessment");
             }
         }
         #endregion
