@@ -156,13 +156,19 @@ namespace NaucniRad.WPF
             {
                 //ispitaniciLista.Add(noviIspitanik);
 
-                Ispitanik probni = new Ispitanik(1, "fakultet", "z", "kurs", "ne", 0);
-                ispitaniciLista.Add(probni);
-                Ispitanik probni2 = new Ispitanik(1, "fakultet2", "z2", "kurs2", "ne2", 1);
-                ispitaniciLista.Add(probni2);
-                Ispitanik probni3 = new Ispitanik(1, "fakultet3", "z3", "kurs3", "ne3", 2);
-                ispitaniciLista.Add(probni3);
+                //Ispitanik probni = new Ispitanik(1, "fakultet", "z", "kurs", "ne", 0);
+                //ispitaniciLista.Add(probni);
+                //Ispitanik probni2 = new Ispitanik(1, "fakultet2", "z2", "kurs2", "ne2", 1);
+                //ispitaniciLista.Add(probni2);
+                //Ispitanik probni3 = new Ispitanik(1, "fakultet3", "z3", "kurs3", "ne3", 2);
+                //ispitaniciLista.Add(probni3);
 
+                //Ispitanik fix = noviIspitanik;
+                //ispitaniciLista.Add(fix);
+                //Ispitanik probni = new Ispitanik(1, "fakultet", "z", "kurs", "ne", 0);
+                //ispitaniciLista.Add(probni);
+                Ispitanik fix = new Ispitanik(noviIspitanik.Age, noviIspitanik.College, noviIspitanik.Gender, noviIspitanik.Course, noviIspitanik.Disability, noviIspitanik.SelfAssessment);
+                ispitaniciLista.Add(fix);
                 MessageBox.Show("Godine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course
                      + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability + "\n" + ispitaniciLista.Count.ToString() + "\n" );
 
@@ -170,20 +176,13 @@ namespace NaucniRad.WPF
                 string s = "";
                 foreach(var ispitanik in ispitaniciLista)
                 {
-                    s+= ispitanik.Age;
+                    s+= ispitanik.Age + "\n";
                 }
                 MessageBox.Show(s);
 
 
                 #region Xml parsiranje
-                //XmlDocument doc = new XmlDocument();
-                //doc.Load("../../Entries.xml");
-                //XmlElement node = SerializeToXmlElement(noviIspitanik);
-                //var ispitaniciNode = doc.CreateElement("Ispitanici");
-                //ispitaniciNode.AppendChild(node);
-                //doc.DocumentElement.AppendChild(ispitaniciNode);
-                //doc.Save("../../Entries.xml");
-
+                
 
                 XmlSerializer serializer = new XmlSerializer(ispitaniciLista.GetType(), new XmlRootAttribute("Ispitanici"));                  //ovo je okej
                 using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //ovo radi okej, problem je pakovanje u listu
@@ -191,50 +190,6 @@ namespace NaucniRad.WPF
                     serializer.Serialize(writer, ispitaniciLista);
                 }
 
-
-
-
-                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
-                //using (StreamWriter writer = new StreamWriter("C:\\Users\\andje\\source\\repos\\NaucniRad\\NaucniRad\\Entries.xml"))
-                //{
-                //   serializer.Serialize(writer, noviIspitanik);
-                //}
-
-                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
-                //using (StreamWriter writer = new StreamWriter("\\Entries.xml"))         //ovako ne moze
-                //{
-                //    serializer.Serialize(writer, noviIspitanik);
-                //}
-
-                //XDocument config = XDocument.Load("../../Entries.xml");                         //ovo ne upisuje nista
-                //XElement rootElement = config.Descendants("Ispitanici").FirstOrDefault();
-                //XElement ispitanikXml = new XElement("Ispitanik", new XAttribute("age", noviIspitanik.Age),
-                //                        new XAttribute("College", noviIspitanik.College));
-
-                //if(rootElement != null)
-                //{
-                //    rootElement.Add(ispitanikXml);
-                //    config.Save("Entries.xml");
-
-                //}
-
-                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
-                //XDocument config = XDocument.Load("../../Entries.xml");                         //ovo ne upisuje nista
-                //XElement rootElement = config.Descendants("Ispitanici").FirstOrDefault();
-                //using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //radi ali samo za poslednji unos
-                //{
-                //    serializer.Serialize(writer, noviIspitanik);
-                //}
-
-                //if (rootElement != null)
-                //{
-                //    rootElement.Add(serializer);
-                //    config.Save("../../Entries.xml");
-
-                //}
-
-
-                
 
 
                 #endregion
