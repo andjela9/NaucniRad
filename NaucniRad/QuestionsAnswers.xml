@@ -1,0 +1,44 @@
+<questions>
+    <question>
+        <path>"/Pictures/amputee.png"</path>
+        <answer>false</answer>
+    </question>
+    <question>
+        <path>"/Pictures/crutches.png"</path>
+        <answer>false</answer>
+    </question>
+    <question>
+        <path>"/Pictures/disabled.png"</path>
+        <answer>false</answer>
+    </question>
+    <question>
+        <path>"/Pictures/handicapped.png"</path>
+        <answer>false</answer>
+    </question>
+    <question>
+        <path>"/Pictures/wheelchair.png"</path>
+        <answer>false</answer>
+    </question>
+
+    <question>
+        <path>"/Pictures/exercise.png""</path>
+        <answer>true</answer>
+    </question>
+    <question>
+        <path>"/Pictures/dancing.png"</path>
+        <answer>true</answer>
+    </question>
+    <question>
+        <path>"/Pictures/fast-track.png"</path>
+        <answer>true</answer>
+    </question>
+    <question>
+        <path>"/Pictures/weightlifting.png"</path>
+        <answer>true</answer>
+    </question>
+    <question>
+        <path>"/Pictures/walking.png"</path>
+        <answer>true</answer>
+    </question>
+
+</questions>

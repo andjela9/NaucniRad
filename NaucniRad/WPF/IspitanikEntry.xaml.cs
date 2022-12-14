@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace NaucniRad.WPF
 {
@@ -106,7 +108,7 @@ namespace NaucniRad.WPF
                 courseVal.Visibility = Visibility.Hidden;
             }
 
-            //validating gender input
+            //validating disability input
             if (disabilityListBox.SelectedIndex == -1)
             {
                 //disabilityListBox.BorderBrush = Brushes.Red;
@@ -135,6 +137,20 @@ namespace NaucniRad.WPF
                 }
                 MessageBox.Show("Godine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course
                     + "\nOsoba sa invaliditetom: " + disability);
+
+
+                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));            //ovo je okej
+                //using (TextWriter writer = new StreamWriter("/Entries.xml"))                //ovo moze u admin modu ali ne ispisuje nista
+                //{
+                //    serializer.Serialize(writer, noviIspitanik);
+                //}
+                XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
+
+                using (StreamWriter writer = new StreamWriter("C:\\Users\\andje\\source\\repos\\NaucniRad\\NaucniRad\\Entries.xml"))
+                {
+                    serializer.Serialize(writer, noviIspitanik);
+                }
+               
             }
             else
             {

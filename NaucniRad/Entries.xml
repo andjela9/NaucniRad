@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Ispitanik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Age>34</Age>
+  <College>MFUNS</College>
+  <Gender>Muski</Gender>
+  <Course>rt</Course>
+  <Disability>false</Disability>
+  <SelfAssessment>0</SelfAssessment>
+</Ispitanik>

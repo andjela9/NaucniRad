@@ -59,6 +59,9 @@
     <Compile Include="WPF\Explanation.xaml.cs">
       <DependentUpon>Explanation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Explanation2.xaml.cs">
+      <DependentUpon>Explanation2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WPF\IspitanikEntry.xaml.cs">
       <DependentUpon>IspitanikEntry.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="WPF\Explanation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Explanation2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,6 +130,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\amputee.png" />
+    <Resource Include="Pictures\crutches.png" />
+    <Resource Include="Pictures\dancing.png" />
+    <Resource Include="Pictures\disabled.png" />
+    <Resource Include="Pictures\exercise.png" />
+    <Resource Include="Pictures\fast-track.png" />
+    <Resource Include="Pictures\handicapped.png" />
+    <Resource Include="Pictures\running.png" />
+    <Resource Include="Pictures\walking.png" />
+    <Resource Include="Pictures\weightlifting.png" />
+    <Resource Include="Pictures\wheelchair.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

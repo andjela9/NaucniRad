@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace NaucniRad
 {
+    [Serializable]
     public class Ispitanik : INotifyPropertyChanged
     {
         private int age;

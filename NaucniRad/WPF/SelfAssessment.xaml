@@ -10,9 +10,21 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
             <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
-        
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Koja recenica Vas najbolje opisuje" FontSize="18" FontWeight="Bold" Margin="20"/>
+        <StackPanel Margin="20, 0, 0, 0" Grid.Row="1">
+            <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">1</RadioButton>
+            <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">2</RadioButton>
+            <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">3</RadioButton>
+            <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">4</RadioButton>
+            <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">5</RadioButton>
+            <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">6</RadioButton>
+            <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">7</RadioButton>
+        </StackPanel>
+        <Button Grid.Row="2" Name="selfAssesmentDalje" HorizontalAlignment="Left" Margin="641,5,0,5"   FontWeight="Bold" FontSize="30" Background="#7CFC00" Width="139"  >Dalje ></Button>
+
     </Grid>
-    
+
 
 </Window>
