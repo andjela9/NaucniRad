@@ -30,7 +30,9 @@ namespace NaucniRad
         {
             //IspitanikEntry ispitanikEntry = new IspitanikEntry(null);
             IspitanikEntry ispitanikEntry = new IspitanikEntry(null);
+            this.Close();
             ispitanikEntry.ShowDialog();
+            
         }
     }
 }

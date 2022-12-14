@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace NaucniRad.WPF
@@ -123,6 +125,17 @@ namespace NaucniRad.WPF
             return retVal;
         }
 
+        public static XmlElement SerializeToXmlElement(object o)
+        {
+            XmlDocument doc = new XmlDocument();
+            using (XmlWriter writer = doc.CreateNavigator().AppendChild())
+            {
+                new XmlSerializer(o.GetType()).Serialize(writer, o);
+            }
+            return doc.DocumentElement;
+        }
+
+
         private void ispitanikDaljeClick(object sender, RoutedEventArgs e)
         {
             if(ValidateInput())
@@ -138,19 +151,63 @@ namespace NaucniRad.WPF
                 MessageBox.Show("Godine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course
                     + "\nOsoba sa invaliditetom: " + disability);
 
+                #region Xml parsiranje
+                //XmlDocument doc = new XmlDocument();
+                //doc.Load("../../Entries.xml");
+                //XmlElement node = SerializeToXmlElement(noviIspitanik);
+                //var ispitaniciNode = doc.CreateElement("Ispitanici");
+                //ispitaniciNode.AppendChild(node);
+                //doc.DocumentElement.AppendChild(ispitaniciNode);
+                //doc.Save("../../Entries.xml");
 
-                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));            //ovo je okej
-                //using (TextWriter writer = new StreamWriter("/Entries.xml"))                //ovo moze u admin modu ali ne ispisuje nista
+
+                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));                  //ovo je okej
+                //using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //radi ali samo za poslednji unos
                 //{
                 //    serializer.Serialize(writer, noviIspitanik);
                 //}
-                XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
 
-                using (StreamWriter writer = new StreamWriter("C:\\Users\\andje\\source\\repos\\NaucniRad\\NaucniRad\\Entries.xml"))
+
+                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
+                //using (StreamWriter writer = new StreamWriter("C:\\Users\\andje\\source\\repos\\NaucniRad\\NaucniRad\\Entries.xml"))
+                //{
+                //   serializer.Serialize(writer, noviIspitanik);
+                //}
+
+                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
+                //using (StreamWriter writer = new StreamWriter("\\Entries.xml"))         //ovako ne moze
+                //{
+                //    serializer.Serialize(writer, noviIspitanik);
+                //}
+
+                //XDocument config = XDocument.Load("../../Entries.xml");                         //ovo ne upisuje nista
+                //XElement rootElement = config.Descendants("Ispitanici").FirstOrDefault();
+                //XElement ispitanikXml = new XElement("Ispitanik", new XAttribute("age", noviIspitanik.Age),
+                //                        new XAttribute("College", noviIspitanik.College));
+
+                //if(rootElement != null)
+                //{
+                //    rootElement.Add(ispitanikXml);
+                //    config.Save("Entries.xml");
+
+                //}
+
+                XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
+                XDocument config = XDocument.Load("../../Entries.xml");                         //ovo ne upisuje nista
+                XElement rootElement = config.Descendants("Ispitanici").FirstOrDefault();
+                using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //radi ali samo za poslednji unos
                 {
                     serializer.Serialize(writer, noviIspitanik);
                 }
-               
+
+                if (rootElement != null)
+                {
+                    rootElement.Add(serializer);
+                    config.Save("../../Entries.xml");
+
+                }
+                #endregion
+
             }
             else
             {
