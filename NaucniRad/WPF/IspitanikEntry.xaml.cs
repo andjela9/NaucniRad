@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,11 +25,13 @@ namespace NaucniRad.WPF
     /// </summary>
     public partial class IspitanikEntry : Window
     {
+        public List<Ispitanik> ucitanaLista = new List<Ispitanik> { };
 
         
+
         private Ispitanik noviIspitanik = new Ispitanik();
         
-        public List<Ispitanik> ispitaniciLista = new List<Ispitanik> { };
+        
         public IspitanikEntry(Ispitanik unetIspitanik)
         {
             InitializeComponent();
@@ -36,6 +40,29 @@ namespace NaucniRad.WPF
             this.collegeListBox.ItemsSource = new List<String> { "FTN", "MFUNS" };
             this.genderListBox.ItemsSource = new List<String> { "Muski", "Zenski", "Ne zelim da se izjasnim" };
             this.disabilityListBox.ItemsSource = new List<String> { "Da", "Ne" };
+
+            //ucitanaLista = new List<Ispitanik>();                  //nova lista koja ce pri pokretanju da uzme to poslednje iz xml i doda na staru listu
+            XElement data = XElement.Load("../../Entries.xml");
+            ucitanaLista = (from ispitanik in data.Descendants("Ispitanik")
+                               select new Ispitanik
+                               {
+
+                                   Age = int.Parse(ispitanik.Element("Age").Value),
+                                   College = ispitanik.Element("College").Value,
+                                   Gender = ispitanik.Element("Gender").Value,
+                                   Course = ispitanik.Element("Course").Value,
+                                   Disability = ispitanik.Element("Disability").Value,
+                                   SelfAssessment = int.Parse(ispitanik.Element("SelfAssessment").Value)
+                               }
+                               ).ToList();
+
+            string t = "";
+            foreach (var ispitanik in ucitanaLista)
+            {
+                t += "***IZ XML: \n" + ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n"
+                    + ispitanik.Course + "\n" + ispitanik.Disability + "\n" + ispitanik.SelfAssessment + "\n";
+            }
+            MessageBox.Show(t);
         }
 
         private bool ValidateInput()
@@ -139,15 +166,15 @@ namespace NaucniRad.WPF
             return doc.DocumentElement;
         }
 
-        public string ListToString(List<Ispitanik> ispitaniciLista)
-        {
-            string s = "";
-            foreach(var ispitanik in ispitaniciLista)
-            {
-                s+= ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n" + ispitanik.Course + "\n" + ispitanik.Disability + "\n";
-            }
-            return s;
-        }
+        //public string ListToString(List<Ispitanik> ispitaniciLista)
+        //{
+        //    string s = "Iz forme u listu:***";
+        //    foreach(var ispitanik in ispitaniciLista)
+        //    {
+        //        s+= ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n" + ispitanik.Course + "\n" + ispitanik.Disability + "\n";
+        //    }
+        //    return s;
+        //}
 
 
         private void ispitanikDaljeClick(object sender, RoutedEventArgs e)
@@ -167,33 +194,42 @@ namespace NaucniRad.WPF
                 //ispitaniciLista.Add(fix);
                 //Ispitanik probni = new Ispitanik(1, "fakultet", "z", "kurs", "ne", 0);
                 //ispitaniciLista.Add(probni);
+
+
+                //popunjavanje liste podacima iz xml
+
+                
+
+
+
+
+                //upis u xml
                 Ispitanik fix = new Ispitanik(noviIspitanik.Age, noviIspitanik.College, noviIspitanik.Gender, noviIspitanik.Course, noviIspitanik.Disability, noviIspitanik.SelfAssessment);
-                ispitaniciLista.Add(fix);
+                ucitanaLista.Add(fix);
                 MessageBox.Show("Godine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course
-                     + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability + "\n" + ispitaniciLista.Count.ToString() + "\n" );
+                     + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability + "\n" + ucitanaLista.Count.ToString() + "\n" );
 
                 //MessageBox.Show(ListToString(ispitaniciLista));
                 string s = "";
-                foreach(var ispitanik in ispitaniciLista)
+                foreach(var ispitanik in ucitanaLista)
                 {
                     s+= ispitanik.Age + "\n";
                 }
                 MessageBox.Show(s);
 
 
-                #region Xml parsiranje
+               
                 
 
-                XmlSerializer serializer = new XmlSerializer(ispitaniciLista.GetType(), new XmlRootAttribute("Ispitanici"));                  //ovo je okej
+                XmlSerializer serializer = new XmlSerializer(ucitanaLista.GetType(), new XmlRootAttribute("Ispitanici"));                  //ovo je okej
                 using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //ovo radi okej, problem je pakovanje u listu
                 {
-                    serializer.Serialize(writer, ispitaniciLista);
+                    serializer.Serialize(writer, ucitanaLista);
                 }
 
 
 
-                #endregion
-
+               
             }
             else
             {
