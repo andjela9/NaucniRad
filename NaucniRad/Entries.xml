@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Ispitanik xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Age>345</Age>
-  <College>MFUNS</College>
-  <Gender>Zenski</Gender>
-  <Course>wer</Course>
-  <Disability>false</Disability>
-  <SelfAssessment>0</SelfAssessment>
-</Ispitanik>
+<Ispitanici xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Ispitanik>
+    <Age>1</Age>
+    <College>fakultet</College>
+    <Gender>z</Gender>
+    <Course>kurs</Course>
+    <Disability>ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>1</Age>
+    <College>fakultet2</College>
+    <Gender>z2</Gender>
+    <Course>kurs2</Course>
+    <Disability>ne2</Disability>
+    <SelfAssessment>1</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>1</Age>
+    <College>fakultet3</College>
+    <Gender>z3</Gender>
+    <Course>kurs3</Course>
+    <Disability>ne3</Disability>
+    <SelfAssessment>2</SelfAssessment>
+  </Ispitanik>
+</Ispitanici>

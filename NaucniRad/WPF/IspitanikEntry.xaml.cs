@@ -23,7 +23,11 @@ namespace NaucniRad.WPF
     /// </summary>
     public partial class IspitanikEntry : Window
     {
+
+        
         private Ispitanik noviIspitanik = new Ispitanik();
+        
+        public List<Ispitanik> ispitaniciLista = new List<Ispitanik> { };
         public IspitanikEntry(Ispitanik unetIspitanik)
         {
             InitializeComponent();
@@ -135,21 +139,41 @@ namespace NaucniRad.WPF
             return doc.DocumentElement;
         }
 
+        public string ListToString(List<Ispitanik> ispitaniciLista)
+        {
+            string s = "";
+            foreach(var ispitanik in ispitaniciLista)
+            {
+                s+= ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n" + ispitanik.Course + "\n" + ispitanik.Disability + "\n";
+            }
+            return s;
+        }
+
 
         private void ispitanikDaljeClick(object sender, RoutedEventArgs e)
         {
             if(ValidateInput())
             {
-                string disability;
-                if (noviIspitanik.Disability == true)
-                {
-                    disability = "Da";
-                }
-                else {
-                    disability = "ne";
-                }
+                //ispitaniciLista.Add(noviIspitanik);
+
+                Ispitanik probni = new Ispitanik(1, "fakultet", "z", "kurs", "ne", 0);
+                ispitaniciLista.Add(probni);
+                Ispitanik probni2 = new Ispitanik(1, "fakultet2", "z2", "kurs2", "ne2", 1);
+                ispitaniciLista.Add(probni2);
+                Ispitanik probni3 = new Ispitanik(1, "fakultet3", "z3", "kurs3", "ne3", 2);
+                ispitaniciLista.Add(probni3);
+
                 MessageBox.Show("Godine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course
-                    + "\nOsoba sa invaliditetom: " + disability);
+                     + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability + "\n" + ispitaniciLista.Count.ToString() + "\n" );
+
+                //MessageBox.Show(ListToString(ispitaniciLista));
+                string s = "";
+                foreach(var ispitanik in ispitaniciLista)
+                {
+                    s+= ispitanik.Age;
+                }
+                MessageBox.Show(s);
+
 
                 #region Xml parsiranje
                 //XmlDocument doc = new XmlDocument();
@@ -161,11 +185,13 @@ namespace NaucniRad.WPF
                 //doc.Save("../../Entries.xml");
 
 
-                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));                  //ovo je okej
-                //using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //radi ali samo za poslednji unos
-                //{
-                //    serializer.Serialize(writer, noviIspitanik);
-                //}
+                XmlSerializer serializer = new XmlSerializer(ispitaniciLista.GetType(), new XmlRootAttribute("Ispitanici"));                  //ovo je okej
+                using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //ovo radi okej, problem je pakovanje u listu
+                {
+                    serializer.Serialize(writer, ispitaniciLista);
+                }
+
+
 
 
                 //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
@@ -192,20 +218,25 @@ namespace NaucniRad.WPF
 
                 //}
 
-                XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
-                XDocument config = XDocument.Load("../../Entries.xml");                         //ovo ne upisuje nista
-                XElement rootElement = config.Descendants("Ispitanici").FirstOrDefault();
-                using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //radi ali samo za poslednji unos
-                {
-                    serializer.Serialize(writer, noviIspitanik);
-                }
+                //XmlSerializer serializer = new XmlSerializer(typeof(Ispitanik));
+                //XDocument config = XDocument.Load("../../Entries.xml");                         //ovo ne upisuje nista
+                //XElement rootElement = config.Descendants("Ispitanici").FirstOrDefault();
+                //using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //radi ali samo za poslednji unos
+                //{
+                //    serializer.Serialize(writer, noviIspitanik);
+                //}
 
-                if (rootElement != null)
-                {
-                    rootElement.Add(serializer);
-                    config.Save("../../Entries.xml");
+                //if (rootElement != null)
+                //{
+                //    rootElement.Add(serializer);
+                //    config.Save("../../Entries.xml");
 
-                }
+                //}
+
+
+                
+
+
                 #endregion
 
             }

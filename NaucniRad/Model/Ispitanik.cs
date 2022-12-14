@@ -4,20 +4,23 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace NaucniRad
 {
     [Serializable]
+    
     public class Ispitanik : INotifyPropertyChanged
     {
         private int age;
         private string college;
         private string gender;
         private string course;
-        private bool disability;
+        private string disability;
         private int selfAssessment;
+        
 
-        public Ispitanik(int age, string college, string gender, string course, bool disability, int selfAssessment)
+        public Ispitanik(int age, string college, string gender, string course, string disability, int selfAssessment)
         {
             this.age = age;
             this.college = college;
@@ -32,6 +35,7 @@ namespace NaucniRad
 
         #region Geteri i seteri
 
+        
         public int Age
         {
             get { return age; }
@@ -71,7 +75,7 @@ namespace NaucniRad
             }
         }
 
-        public bool Disability
+        public string Disability
         {
             get { return disability; }
             set
