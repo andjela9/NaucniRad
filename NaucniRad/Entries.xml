@@ -40,4 +40,12 @@
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
+  <Ispitanik>
+    <Age>25</Age>
+    <College>MFUNS</College>
+    <Gender>Muski</Gender>
+    <Course>25</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
 </Ispitanici>

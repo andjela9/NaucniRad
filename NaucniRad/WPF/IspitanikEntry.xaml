@@ -33,7 +33,7 @@
         
         <ComboBox Grid.Row="1" Grid.Column="1" Name="ageListBox" Margin="15, 30" SelectedItem="{Binding Path= Age}" ToolTip="Izaberite godine"/>
 
-        <TextBlock Name="ageVal" Text="*Obavezno polje!" Grid.Row="1" Grid.Column="1" Margin="15, 80, 15, 0" Foreground="Red"  Visibility="Hidden" FontSize="20"/>
+        <TextBlock Name="ageVal" Text="*Obavezno polje!" Grid.Row="1" Grid.Column="1" Margin="15, 90, 15, 0" Foreground="Red"  Visibility="Hidden" FontSize="20"/>
         <ComboBox Grid.Row="2" Grid.Column="1" Name="collegeListBox" Margin="15, 30" SelectedItem="{Binding Path= College}" ToolTip="Izaberite fakultet"/>
         <TextBlock Name="collegeVal" Text="*Obavezno polje!" Grid.Row="2" Grid.Column="1" Margin="15, 90, 15, 0" Foreground="Red"  Visibility="Hidden" FontSize="20"/>
         <ComboBox Grid.Row="3" Grid.Column="1" Name="genderListBox" Margin="15, 30" SelectedItem="{Binding Path= Gender}" ToolTip="Vas pol"/>
