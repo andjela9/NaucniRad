@@ -48,4 +48,52 @@
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
+  <Ispitanik>
+    <Age>28</Age>
+    <College>MFUNS</College>
+    <Gender>Muski</Gender>
+    <Course>28</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>34</Age>
+    <College>MFUNS</College>
+    <Gender>Muski</Gender>
+    <Course>3-4</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>58</Age>
+    <College>FTN</College>
+    <Gender>Ne zelim da se izjasnim</Gender>
+    <Course>qwe</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>99</Age>
+    <College>FTN</College>
+    <Gender>Ne zelim da se izjasnim</Gender>
+    <Course>wert</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>46</Age>
+    <College>FTN</College>
+    <Gender>Zenski</Gender>
+    <Course>e2</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>7</Age>
+    <College>FTN</College>
+    <Gender>Zenski</Gender>
+    <Course>e2</Course>
+    <Disability>Da</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
 </Ispitanici>

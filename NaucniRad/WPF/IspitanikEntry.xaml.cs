@@ -37,7 +37,7 @@ namespace NaucniRad.WPF
             InitializeComponent();
             
             this.DataContext= noviIspitanik;
-            this.ageListBox.ItemsSource = new List<String> { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"};
+            //this.ageListBox.ItemsSource = new List<String> { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"};
             this.collegeListBox.ItemsSource = new List<String> { "FTN", "MFUNS" };
             this.genderListBox.ItemsSource = new List<String> { "Muski", "Zenski", "Ne zelim da se izjasnim" };
             this.disabilityListBox.ItemsSource = new List<String> { "Da", "Ne" };
@@ -84,18 +84,49 @@ namespace NaucniRad.WPF
             bool retVal = true;
 
             //validating age input
-            
-            if (ageListBox.SelectedIndex == -1)
+            //if (ageListBox.SelectedIndex == -1)
+            //{
+            //    //ageListBox.BorderBrush= Brushes.Red;
+            //    ageVal.Visibility = Visibility.Visible;
+            //    retVal = false;
+            //}
+            //else
+            //{
+            //    //ageVal.ClearValue(Border.BorderBrushProperty);
+            //    ageVal.Visibility = Visibility.Hidden;
+            //}
+            //validating age input
+            if (String.IsNullOrWhiteSpace(ageTxt.Text))
             {
-                //ageListBox.BorderBrush= Brushes.Red;
+                ageTxt.BorderBrush = Brushes.Red;
                 ageVal.Visibility = Visibility.Visible;
                 retVal = false;
             }
             else
             {
-                //ageVal.ClearValue(Border.BorderBrushProperty);
-                ageVal.Visibility = Visibility.Hidden;
+                if (Int32.TryParse(ageTxt.Text, out int age))
+                {
+                    if (age <= 0)
+                    {
+                        ageTxt.BorderBrush = Brushes.Red;
+                        ageVal.Visibility = Visibility.Visible;
+                        ageVal.Text = "Godine moraju biti pozitivan broj";
+                        retVal = false;
+                    }
+                    else
+                    {
+                        ageTxt.ClearValue(Border.BorderBrushProperty);
+                        ageVal.Visibility = Visibility.Hidden;
+                    }
+                }
+                else
+                {
+                    ageTxt.BorderBrush = Brushes.Red;
+                    ageVal.Text = "Godine moraju biti pozitivan broj";
+                    retVal = false;
+                }
             }
+
 
             //validating college input
             if (collegeListBox.SelectedIndex == -1)
