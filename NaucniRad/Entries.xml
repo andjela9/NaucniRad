@@ -1,34 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Ispitanici xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Ispitanik>
-    <Age>0</Age>
-    <College>FTN</College>
-    <Gender>Muski</Gender>
-    <Course>cetvrta</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>0</Age>
+    <Age>18</Age>
     <College>FTN</College>
     <Gender>Muski</Gender>
     <Course>prvi</Course>
-    <Disability>Ne</Disability>
+    <Disability>Da</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
   <Ispitanik>
-    <Age>0</Age>
-    <College>FTN</College>
-    <Gender>Muski</Gender>
+    <Age>19</Age>
+    <College>MFUNS</College>
+    <Gender>Zenski</Gender>
     <Course>drugi</Course>
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
   <Ispitanik>
-    <Age>3</Age>
+    <Age>20</Age>
     <College>FTN</College>
-    <Gender>Muski</Gender>
-    <Course>treca</Course>
+    <Gender>Ne zelim da se izjasnim</Gender>
+    <Course>treci</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>21</Age>
+    <College>FTN</College>
+    <Gender>Ne zelim da se izjasnim</Gender>
+    <Course>cetvrti</Course>
+    <Disability>Da</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>30</Age>
+    <College>MFUNS</College>
+    <Gender>Ne zelim da se izjasnim</Gender>
+    <Course>najstariji</Course>
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>

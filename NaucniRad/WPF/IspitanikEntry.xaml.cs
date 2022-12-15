@@ -37,31 +37,45 @@ namespace NaucniRad.WPF
             InitializeComponent();
             
             this.DataContext= noviIspitanik;
+            this.ageListBox.ItemsSource = new List<String> { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"};
             this.collegeListBox.ItemsSource = new List<String> { "FTN", "MFUNS" };
             this.genderListBox.ItemsSource = new List<String> { "Muski", "Zenski", "Ne zelim da se izjasnim" };
             this.disabilityListBox.ItemsSource = new List<String> { "Da", "Ne" };
 
+
             //ucitanaLista = new List<Ispitanik>();                  //nova lista koja ce pri pokretanju da uzme to poslednje iz xml i doda na staru listu
-            XElement data = XElement.Load("../../Entries.xml");
-            ucitanaLista = (from ispitanik in data.Descendants("Ispitanik")
-                               select new Ispitanik
-                               {
 
-                                   Age = int.Parse(ispitanik.Element("Age").Value),
-                                   College = ispitanik.Element("College").Value,
-                                   Gender = ispitanik.Element("Gender").Value,
-                                   Course = ispitanik.Element("Course").Value,
-                                   Disability = ispitanik.Element("Disability").Value,
-                                   SelfAssessment = int.Parse(ispitanik.Element("SelfAssessment").Value)
-                               }
-                               ).ToList();
 
-            string t = "";
-            foreach (var ispitanik in ucitanaLista)
+            try
             {
-                t += "***IZ XML: \n" + ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n"
-                    + ispitanik.Course + "\n" + ispitanik.Disability + "\n" + ispitanik.SelfAssessment + "\n";
+                XElement data = XElement.Load("../../Entries.xml");
+                ucitanaLista = (from ispitanik in data.Descendants("Ispitanik")
+                                select new Ispitanik
+                                {
+
+                                    Age = ispitanik.Element("Age").Value,
+                                    College = ispitanik.Element("College").Value,
+                                    Gender = ispitanik.Element("Gender").Value,
+                                    Course = ispitanik.Element("Course").Value,
+                                    Disability = ispitanik.Element("Disability").Value,
+                                    SelfAssessment = int.Parse(ispitanik.Element("SelfAssessment").Value)
+                                }
+                                   ).ToList();
             }
+            catch (Exception)
+            {
+                //ovde upada ako ne moze da ucita iz xml-a, tj xml je prazan
+            }
+
+
+
+            string t = ListToString(ucitanaLista);
+            //string t = "\n***IZ XML:\n";
+            //foreach (var ispitanik in ucitanaLista)
+            //{
+            //    t += "\n" + (ispitanik.Age) + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n"
+            //        + ispitanik.Course + "\n" + ispitanik.Disability + "\n" + ispitanik.SelfAssessment + "\n";
+            //}
             MessageBox.Show(t);
         }
 
@@ -70,40 +84,21 @@ namespace NaucniRad.WPF
             bool retVal = true;
 
             //validating age input
-            if (String.IsNullOrWhiteSpace(ageTxt.Text))
+            
+            if (ageListBox.SelectedIndex == -1)
             {
-                ageTxt.BorderBrush = Brushes.Red;
+                //ageListBox.BorderBrush= Brushes.Red;
                 ageVal.Visibility = Visibility.Visible;
                 retVal = false;
             }
             else
             {
-                int age;
-                if(Int32.TryParse(ageTxt.Text, out age))
-                {
-                    if (age <= 0)
-                    {
-                        ageTxt.BorderBrush = Brushes.Red;
-                        ageVal.Visibility = Visibility.Visible;
-                        ageVal.Text = "Godine moraju biti pozitivan broj";
-                        retVal = false;
-                    }
-                    else
-                    {
-                        ageTxt.ClearValue(Border.BorderBrushProperty);
-                        ageVal.Visibility = Visibility.Hidden;
-                    }
-                }
-                else
-                {
-                    ageTxt.BorderBrush = Brushes.Red;
-                    ageVal.Text = "Godine moraju biti pozitivan broj";
-                    retVal = false;
-                }
+                //ageVal.ClearValue(Border.BorderBrushProperty);
+                ageVal.Visibility = Visibility.Hidden;
             }
 
             //validating college input
-            if(collegeListBox.SelectedIndex == -1)
+            if (collegeListBox.SelectedIndex == -1)
             {
                 //collegeListBox.BorderBrush= Brushes.Red;
                 collegeVal.Visibility = Visibility.Visible;
@@ -166,21 +161,22 @@ namespace NaucniRad.WPF
             return doc.DocumentElement;
         }
 
-        //public string ListToString(List<Ispitanik> ispitaniciLista)
-        //{
-        //    string s = "Iz forme u listu:***";
-        //    foreach(var ispitanik in ispitaniciLista)
-        //    {
-        //        s+= ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n" + ispitanik.Course + "\n" + ispitanik.Disability + "\n";
-        //    }
-        //    return s;
-        //}
+        public string ListToString(List<Ispitanik> ispitaniciLista)
+        {
+            string s = "Iz forme u listu:***\n";
+            foreach(var ispitanik in ispitaniciLista)
+            {
+                s+= ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n" + ispitanik.Course + "\n" + ispitanik.Disability + "\n";
+            }
+            return s;
+        }
 
 
         private void ispitanikDaljeClick(object sender, RoutedEventArgs e)
         {
             if(ValidateInput())
             {
+                #region debag problema sa listom
                 //ispitaniciLista.Add(noviIspitanik);
 
                 //Ispitanik probni = new Ispitanik(1, "fakultet", "z", "kurs", "ne", 0);
@@ -197,37 +193,30 @@ namespace NaucniRad.WPF
 
 
                 //popunjavanje liste podacima iz xml
-
-                
-
-
-
+                #endregion
 
                 //upis u xml
                 Ispitanik fix = new Ispitanik(noviIspitanik.Age, noviIspitanik.College, noviIspitanik.Gender, noviIspitanik.Course, noviIspitanik.Disability, noviIspitanik.SelfAssessment);
                 ucitanaLista.Add(fix);
-                MessageBox.Show("Godine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course
-                     + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability + "\n" + ucitanaLista.Count.ToString() + "\n" );
+                MessageBox.Show("Poslednji unos: \n" +  "\nGodine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " 
+                    + noviIspitanik.Course + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability + "\nBroj elemenata u listi: " + ucitanaLista.Count.ToString() + "\n" );
 
                 //MessageBox.Show(ListToString(ispitaniciLista));
-                string s = "";
+                string s = "Lista iz programa\n";
                 foreach(var ispitanik in ucitanaLista)
                 {
                     s+= ispitanik.Age + "\n";
                 }
                 MessageBox.Show(s);
 
-
-               
-                
-
                 XmlSerializer serializer = new XmlSerializer(ucitanaLista.GetType(), new XmlRootAttribute("Ispitanici"));                  //ovo je okej
-                using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //ovo radi okej, problem je pakovanje u listu
+                using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //okej
                 {
                     serializer.Serialize(writer, ucitanaLista);
+                    writer.Close();
                 }
 
-
+                //TODO: linq upitom upisati ucitanaLista u xml
 
                
             }

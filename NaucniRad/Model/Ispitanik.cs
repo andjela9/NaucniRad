@@ -12,7 +12,7 @@ namespace NaucniRad
     
     public class Ispitanik : INotifyPropertyChanged
     {
-        private int age;
+        private string age;
         private string college;
         private string gender;
         private string course;
@@ -20,7 +20,7 @@ namespace NaucniRad
         private int selfAssessment;
         
 
-        public Ispitanik(int age, string college, string gender, string course, string disability, int selfAssessment)
+        public Ispitanik(string age, string college, string gender, string course, string disability, int selfAssessment)
         {
             this.age = age;
             this.college = college;
@@ -36,7 +36,7 @@ namespace NaucniRad
         #region Geteri i seteri
 
         
-        public int Age
+        public string Age
         {
             get { return age; }
             set
@@ -89,7 +89,7 @@ namespace NaucniRad
             get { return selfAssessment; }
             set
             {
-                age = value;
+                selfAssessment = value;
                 OnPropertyChanged("SelfAssessment");
             }
         }
