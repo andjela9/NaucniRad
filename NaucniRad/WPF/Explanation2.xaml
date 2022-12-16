@@ -24,7 +24,7 @@
         <TextBlock Grid.Row="1" Grid.Column="1" Margin="10" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Trijumf,   slavlje,   fantastično,   uzbuđenost, "/><LineBreak/><Run Text="spektakularno,   srećno,   smejanje,   zadovoljno"/></TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="1" Margin="10" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Bes,   pokvaren,   zlo,   negativan,  "/><LineBreak/><Run Text="odvratan,   gađenje,   sebičnost,   mržnja"/></TextBlock>
 
-        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10" Text="Lose" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10" Text="Loše" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="3" Grid.Column="0" Margin="10" Text="Osoba sa invaliditetom" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Margin="10" Text="Osoba bez invaliditeta" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <StackPanel Grid.Row="3" Grid.Column="1" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">

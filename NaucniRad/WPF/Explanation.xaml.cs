@@ -19,11 +19,14 @@ namespace NaucniRad.WPF
     /// </summary>
     public partial class Explanation : Window
     {
+
+        //ucitati sekciju
+        int sekcija = 7;
         public Explanation()
         {
             InitializeComponent();
-            //ucitati sekciju
-            int sekcija = 7;
+            
+            
 
             switch (sekcija)
             {
@@ -34,20 +37,20 @@ namespace NaucniRad.WPF
                     objasnjenjeTxt.Text = "Dugacak tekst 1";
                     break;
                 case 2:
-                    kategorijaLevoTxt.Text = "Loše";
-                    kategorijaDesnoTxt.Text = "Dobro";
+                    kategorijaLevoTxt.Text = "LOŠE";
+                    kategorijaDesnoTxt.Text = "DOBRO";
                     sekcijaBrojTxt.Text = "Sekcija 2 od 7";
                     objasnjenjeTxt.Text = "Dugacak tekst 2";
                     break;
                 case 3:
-                    kategorijaLevoTxt.Text = "Loše\nOsoba BEZ invaliditeta";
-                    kategorijaDesnoTxt.Text = "Dobro\nOsoba SA invaliditetom";
+                    kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
+                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
                     sekcijaBrojTxt.Text = "Sekcija 3 od 7";
                     objasnjenjeTxt.Text = "Dugacak tekst 3";
                     break;
                 case 4:
-                    kategorijaLevoTxt.Text = "Loše\nOsoba BEZ invaliditeta";
-                    kategorijaDesnoTxt.Text = "Dobro\nOsoba SA invaliditetom";
+                    kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
+                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
                     sekcijaBrojTxt.Text = "Sekcija 4 od 7";
                     objasnjenjeTxt.Text = "Dugacak tekst 4";
                     break;
@@ -58,14 +61,14 @@ namespace NaucniRad.WPF
                     objasnjenjeTxt.Text = "Dugacak tekst 5";
                     break;
                 case 6:
-                    kategorijaLevoTxt.Text = "Loše\nOsoba SA invaliditetom";
-                    kategorijaDesnoTxt.Text = "Dobro\nOsoba BEZ invaliditeta";
+                    kategorijaLevoTxt.Text = "LOŠE\nOsoba SA invaliditetom";
+                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba BEZ invaliditeta";
                     sekcijaBrojTxt.Text = "Sekcija 6 od 7";
                     objasnjenjeTxt.Text = "Dugacak tekst 6";
                     break;
                 case 7:
-                    kategorijaLevoTxt.Text = "Loše\nOsoba SA invaliditetom";
-                    kategorijaDesnoTxt.Text = "Dobro\nOsoba BEZ invaliditeta";
+                    kategorijaLevoTxt.Text = "LOŠE\nOsoba SA invaliditetom";
+                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba BEZ invaliditeta";
                     sekcijaBrojTxt.Text = "Sekcija 7 od 7";
                     objasnjenjeTxt.Text = "Dugacak tekst 7";
                     break;
@@ -85,7 +88,8 @@ namespace NaucniRad.WPF
 
         private void ExplanationClick(object sender, RoutedEventArgs e)
         {
-            Question question = new Question();
+            
+            Question question = new Question(sekcija);
             this.Close();
             question.ShowDialog();
         }

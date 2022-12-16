@@ -39,7 +39,7 @@ namespace NaucniRad.WPF
             this.DataContext= noviIspitanik;
             //this.ageListBox.ItemsSource = new List<String> { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"};
             this.collegeListBox.ItemsSource = new List<String> { "FTN", "MFUNS" };
-            this.genderListBox.ItemsSource = new List<String> { "Muski", "Zenski", "Ne zelim da se izjasnim" };
+            this.genderListBox.ItemsSource = new List<String> { "Muški", "Ženski", "Ne želim da se izjasnim" };
             this.disabilityListBox.ItemsSource = new List<String> { "Da", "Ne" };
 
 

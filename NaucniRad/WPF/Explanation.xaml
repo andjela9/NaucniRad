@@ -23,8 +23,8 @@
 
         <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Pritisnite 'E' za" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Pritisnite 'I' za" FontSize="18" FontWeight="Bold"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Name="kategorijaLevoTxt" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" Text="ovde kategorija" FontSize="18" FontWeight="Bold"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Name="kategorijaDesnoTxt" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" Text="ovde kategorija" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Name="kategorijaLevoTxt" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" Text="ovde kategorija" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="kategorijaDesnoTxt" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" Text="ovde kategorija" FontSize="20" FontWeight="Bold"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Text="sekcija..." HorizontalAlignment="Center" Name="sekcijaBrojTxt" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" Text="neki tekst" Name="objasnjenjeTxt" FontSize="18" FontWeight="Bold"/>

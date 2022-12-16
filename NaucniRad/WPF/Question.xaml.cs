@@ -23,6 +23,41 @@ namespace NaucniRad.WPF
         {
             InitializeComponent();
 
+            switch (sekcija)
+            {
+                case 1:
+                    kategorijaLevoTxt.Text = "Osoba BEZ invaliditeta";
+                    kategorijaDesnoTxt.Text = "Osoba SA invaliditetom";
+                    break;
+                case 2:
+                    kategorijaLevoTxt.Text = "Loše";
+                    kategorijaDesnoTxt.Text = "DOBRO";
+                    break;
+                case 3:
+                    kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
+                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
+                    break;
+                case 4:
+                    kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
+                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
+                    break;
+                case 5:
+                    kategorijaLevoTxt.Text = "Osoba SA invaliditetom";
+                    kategorijaDesnoTxt.Text = "Osoba BEZ invaliditeta";
+                    break;
+                case 6:
+                    kategorijaLevoTxt.Text = "LOŠE\nOsoba SA invaliditetom";
+                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba BEZ invaliditeta";
+                    break;
+                case 7:
+                    kategorijaLevoTxt.Text = "LOŠE\nOsoba SA invaliditetom";
+                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba BEZ invaliditeta";
+                    break;
+                default:
+                    kategorijaDesnoTxt.Text = "";
+                    kategorijaLevoTxt.Text = "";
+                    break;
+            }
 
         }
     }
