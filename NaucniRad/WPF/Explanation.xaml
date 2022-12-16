@@ -9,17 +9,26 @@
     <Grid>
         <!--#region Definisanje grida-->
         <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.2*"/>
             <RowDefinition/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition/>
+            <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition Width="5*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <!--#endregion-->
-        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Objasnjenje tralala, Srdjan" FontSize="18" FontWeight="Bold"/>
-        <Button Grid.Row="2" Grid.Column="2" Margin="10,10,10,10" Click="ExplanationClick" BorderBrush="#7CFC00" Background="#7CFC00" FontWeight="Bold" FontSize="20">Dalje ></Button>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Pritisnite 'E' za" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Pritisnite 'I' za" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Name="kategorijaLevoTxt" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" Text="ovde kategorija" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="kategorijaDesnoTxt" VerticalAlignment="Center" TextAlignment="Center" HorizontalAlignment="Center" Text="ovde kategorija" FontSize="18" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Text="sekcija..." HorizontalAlignment="Center" Name="sekcijaBrojTxt" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Grid.ColumnSpan="2" HorizontalAlignment="Center" Text="neki tekst" Name="objasnjenjeTxt" FontSize="18" FontWeight="Bold"/>
+
+        <Button Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="50" FontWeight="Bold" Margin="10,0,10,0" Click="ExplanationClick" BorderBrush="#7CFC00" Background="#7CFC00" FontSize="20">Dalje ></Button>
     </Grid>
 </Window>

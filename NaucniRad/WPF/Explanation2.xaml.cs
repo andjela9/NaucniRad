@@ -23,5 +23,12 @@ namespace NaucniRad.WPF
         {
             InitializeComponent();
         }
+
+        private void explanationDalje_Click(object sender, RoutedEventArgs e)
+        {
+            Explanation expl = new Explanation();
+            this.Close();
+            expl.ShowDialog();
+        }
     }
 }

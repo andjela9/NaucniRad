@@ -76,7 +76,7 @@ namespace NaucniRad.WPF
             //    t += "\n" + (ispitanik.Age) + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n"
             //        + ispitanik.Course + "\n" + ispitanik.Disability + "\n" + ispitanik.SelfAssessment + "\n";
             //}
-            MessageBox.Show(t);
+            //MessageBox.Show(t);
         }
 
         private bool ValidateInput()
@@ -238,7 +238,7 @@ namespace NaucniRad.WPF
                 {
                     s+= ispitanik.Age + "\n";
                 }
-                MessageBox.Show(s);
+                //MessageBox.Show(s);
 
                 XmlSerializer serializer = new XmlSerializer(ucitanaLista.GetType(), new XmlRootAttribute("Ispitanici"));                  //ovo je okej
                 using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //okej
@@ -248,6 +248,9 @@ namespace NaucniRad.WPF
                 }
 
                 //TODO: linq upitom upisati ucitanaLista u xml
+                Explanation2 exp2 = new Explanation2();
+                this.Close();
+                exp2.ShowDialog();
 
                
             }

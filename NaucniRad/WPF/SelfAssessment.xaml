@@ -12,7 +12,7 @@
             <RowDefinition/>
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Koja recenica Vas najbolje opisuje" FontSize="18" FontWeight="Bold" Margin="20"/>
+        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Koja rečenica Vas najbolje opisuje" FontSize="18" FontWeight="Bold" Margin="20"/>
         <StackPanel Margin="20, 0, 0, 0" Grid.Row="1">
             <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">1</RadioButton>
             <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">2</RadioButton>
