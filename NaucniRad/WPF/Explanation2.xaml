@@ -8,43 +8,49 @@
         Title="Explanation2" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.6*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.5*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" Text="Kategorija" TextAlignment="Left" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Margin="10" Text="Dobro" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <TextBlock Grid.Row="1" Grid.Column="1" Margin="10" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Trijumf,   slavlje,   fantastično,   uzbuđenost, "/><LineBreak/><Run Text="spektakularno,   srećno,   smejanje,   zadovoljno"/></TextBlock>
-        <TextBlock Grid.Row="2" Grid.Column="1" Margin="10" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Bes,   pokvaren,   zlo,   negativan,  "/><LineBreak/><Run Text="odvratan,   gađenje,   sebičnost,   mržnja"/></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" VerticalAlignment="Top" TextAlignment="Center" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" TextWrapping="Wrap"><Run Text="U ovom testu, koristićete tastere ‘E’ i ‘I’ na tastaturi kako biste kategorizovali slike/reči što brže možete. "/><LineBreak/><Run Text="Ovo su četiri grupe i stavke koji pripadaju svakoj:"/></TextBlock>
+        <Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,0,10,0" Fill="LightGray"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="20,0,0,0" Text="Kategorija" TextAlignment="Left" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Grid.Row="1" Grid.Column="1"  Margin="20,0,0,0" Text="Stavke" TextAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="20" Text="Dobro" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="10" FontSize="18"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Trijumf,   slavlje,   fantastično,   uzbuđenost, "/><LineBreak/><Run Text="spektakularno,   srećno,   smejanje,   zadovoljno"/></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="10" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Bes,   pokvaren,   zlo,   negativan,  "/><LineBreak/><Run Text="odvratan,   gađenje,   sebičnost,   mržnja"/></TextBlock>
 
-        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10" Text="Loše" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10" Text="Osoba sa invaliditetom" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <TextBlock Grid.Row="4" Grid.Column="0" Margin="10" Text="Osoba bez invaliditeta" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <StackPanel Grid.Row="3" Grid.Column="1" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Image Source="/Pictures/amputee.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-            <Image Source="/Pictures/crutches.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-            <Image Source="/Pictures/disabled.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-            <Image Source="/Pictures/handicapped.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-            <Image Source="/Pictures/wheelchair.png" Height="30" Width="30" Margin="0,0,30, 0"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="20" Text="Loše" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="20" Text="Osoba sa invaliditetom" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Margin="20" Text="Osoba bez invaliditeta" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+        <StackPanel Grid.Row="4" Grid.Column="1" Margin="10" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Image Source="/Pictures90/disabled-person.png" Height="45" Width="45" Margin="0,0,30, 0"/>
+            <Image Source="/Pictures90/icons8-amputee-90.png" Height="45" Width="45" Margin="0,0,30, 0" />
+            <Image Source="/Pictures90/icons8-amputee-90 (1).png" Height="45" Width="45" Margin="0,0,30, 0"/>
+            <Image Source="/Pictures90/icons8-handicapped-90.png" Height="45" Width="45"  Margin="0,0,30, 0"/>
+            <Image Source="/Pictures90/icons8-wheelchair-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
+            <Image Source="/Pictures90/sitting-down.png" Height="45" Width="45" Margin="0,0,30, 0"/>
         </StackPanel>
-        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-
-            <Image Source="/Pictures/exercise.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-            <Image Source="/Pictures/dancing.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-            <Image Source="/Pictures/fast-track.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-            <Image Source="/Pictures/weightlifting.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-            <Image Source="/Pictures/walking.png" Height="30" Width="30" Margin="0,0,30, 0"/>
-
-
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Image Source="/Pictures90/exercise90.png" Height="45" Width="45" Margin="0,0,30, 0" />
+            <Image Source="/Pictures90/icons8-dancing-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
+            <Image Source="/Pictures90/icons8-exercise-90.png" Height="45" Width="45" Margin="0,0,30, 0" />
+            <Image Source="/Pictures90/icons8-fast-track-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
+            <Image Source="/Pictures90/icons8-walking-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
+            <Image Source="/Pictures90/icons8-weightlifting-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
         </StackPanel>
-        <Button Grid.Row="5" Name="explanationDalje" Click="explanationDalje_Click" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="90" Height="40" FontWeight="Bold" Margin="10,0,10,0" FontSize="20" Background="#7CFC00">Dalje ></Button>
+        
+        <TextBlock Grid.Row="6" Grid.Column="0" Margin="10,0,0,0" FontWeight="Bold" VerticalAlignment="Bottom" FontSize="16" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="Postoji sedam delova. Instrukcije se menjaju za svaki deo. Obratite pažnju!"/>
+        <Button Grid.Row="7" Name="explanationDalje" Click="explanationDalje_Click" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="90" Height="40" FontWeight="Bold" Margin="10,0,10,0" FontSize="20" Background="#7CFC00">Dalje ></Button>
 
     </Grid>
 </Window>

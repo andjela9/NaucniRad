@@ -150,5 +150,19 @@
     <Resource Include="Pictures\weightlifting.png" />
     <Resource Include="Pictures\wheelchair.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures90\disabled-person.png" />
+    <Resource Include="Pictures90\exercise90.png" />
+    <Resource Include="Pictures90\icons8-amputee-90 %281%29.png" />
+    <Resource Include="Pictures90\icons8-amputee-90.png" />
+    <Resource Include="Pictures90\icons8-dancing-90.png" />
+    <Resource Include="Pictures90\icons8-exercise-90.png" />
+    <Resource Include="Pictures90\icons8-fast-track-90.png" />
+    <Resource Include="Pictures90\icons8-handicapped-90.png" />
+    <Resource Include="Pictures90\icons8-walking-90.png" />
+    <Resource Include="Pictures90\icons8-weightlifting-90.png" />
+    <Resource Include="Pictures90\icons8-wheelchair-90.png" />
+    <Resource Include="Pictures90\sitting-down.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

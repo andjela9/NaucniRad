@@ -296,4 +296,60 @@
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
+  <Ispitanik>
+    <Age>123</Age>
+    <College>MFUNS</College>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>er</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>156</Age>
+    <College>MFUNS</College>
+    <Gender>Muški</Gender>
+    <Course>ntymtc</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>12</Age>
+    <College>MFUNS</College>
+    <Gender>Muški</Gender>
+    <Course>nrs</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>22</Age>
+    <College>MFUNS</College>
+    <Gender>Muški</Gender>
+    <Course>Logopedija</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>34</Age>
+    <College>MFUNS</College>
+    <Gender>Ženski</Gender>
+    <Course>feaeagfva</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>35</Age>
+    <College>MFUNS</College>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>jmnzfgnxd</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Age>4</Age>
+    <College>MFUNS</College>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>jyjnd</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
 </Ispitanici>

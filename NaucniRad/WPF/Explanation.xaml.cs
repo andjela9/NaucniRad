@@ -21,12 +21,10 @@ namespace NaucniRad.WPF
     {
 
         //ucitati sekciju
-        int sekcija = 7;
+        int sekcija = 1;
         public Explanation()
         {
             InitializeComponent();
-            
-            
 
             switch (sekcija)
             {
@@ -34,19 +32,19 @@ namespace NaucniRad.WPF
                     kategorijaLevoTxt.Text = "Osoba BEZ invaliditeta";
                     kategorijaDesnoTxt.Text = "Osoba SA invaliditetom";
                     sekcijaBrojTxt.Text = "Sekcija 1 od 7";
-                    objasnjenjeTxt.Text = "Dugacak tekst 1";
+                    objasnjenjeTxt.Text = "Stavite prst leve ruke na taster E i pritisnite ga za svaku sliku koja pripada kategoriji\nOsoba sa invaliditetom.\nStavite prst desne ruke na taster I za slike koje pripadaju kategoriji\nOsoba bez invaliditeta.\nSlike će se pojavljivati jedna po jedna.\n";
                     break;
                 case 2:
                     kategorijaLevoTxt.Text = "LOŠE";
                     kategorijaDesnoTxt.Text = "DOBRO";
                     sekcijaBrojTxt.Text = "Sekcija 2 od 7";
-                    objasnjenjeTxt.Text = "Dugacak tekst 2";
+                    objasnjenjeTxt.Text = "Stavite prst leve ruke na taster E i pritisnite ga za svaku sliku koja pripada kategoriji\nLOŠE.\nStavite prst desne ruke na taster I za slike koje pripadaju kategoriji\nDOBRO.\nSlike će se pojavljivati jedna po jedna.\n";
                     break;
                 case 3:
                     kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
                     kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
                     sekcijaBrojTxt.Text = "Sekcija 3 od 7";
-                    objasnjenjeTxt.Text = "Dugacak tekst 3";
+                    objasnjenjeTxt.Text = "Pritisnite taster E za kategorije Osobe SA invaliditetom i LOŠE.\r\nPritisnite taster I za kategorije Osobe BEZ invaliditeta i DOBRO.\r\nSvaka stavka pripada samo jednoj kategoriji. Biće korištene iste slike i reči kao i u prva dva dela.\r\n";
                     break;
                 case 4:
                     kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
@@ -79,16 +77,12 @@ namespace NaucniRad.WPF
                     sekcijaBrojTxt.Text = "";
                     objasnjenjeTxt.Text = "";
                     break;
-
             }
             //case za sekciju
-            
-
         }
 
         private void ExplanationClick(object sender, RoutedEventArgs e)
         {
-            
             Question question = new Question(sekcija);
             this.Close();
             question.ShowDialog();

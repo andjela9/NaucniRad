@@ -1,44 +1,41 @@
-<questions>
+<<?xml version="1.0" encoding="utf-8"?>
+<Questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<section number=1>      <!--7 10 4 5 4 3 8 6 10 12 7 11 8 9 2 3 2 1 6 9-->
     <question>
-        <path>"/Pictures/amputee.png"</path>
-        <answer>false</answer>
+        <path>"/Pictures90/exercise90.png"</path>             <!-- ovde ili path ili rec, pa preko zavrsetka .png videti sta je -->
+        <answer>E</answer>                                      <!--ovde odgovor E ili I -->
     </question>
     <question>
-        <path>"/Pictures/crutches.png"</path>
-        <answer>false</answer>
+        <path>"/Pictures90/icons8-fast-track-90.png"</path>             <!--10-->
+        <answer>E</answer>          
     </question>
     <question>
-        <path>"/Pictures/disabled.png"</path>
-        <answer>false</answer>
+        <path>"/Pictures90/icons8-handicapped-90.png"</path>             <!--4-->
+        <answer>I</answer>          
     </question>
     <question>
-        <path>"/Pictures/handicapped.png"</path>
-        <answer>false</answer>
+        <path>"/Pictures90/icons8-wheelchair-90.png"</path>             <!--5-->
+        <answer>I</answer>          
     </question>
     <question>
-        <path>"/Pictures/wheelchair.png"</path>
-        <answer>false</answer>
+        <path>"/Pictures90/icons8-handicapped-90.png"</path>             <!--4-->
+        <answer>I</answer>          
     </question>
+    <question>
+        <path>"/Pictures90/icons8-amputee-90 (1).png"</path>             <!--3-->
+        <answer>I</answer>          
+    </question>
+    <question>
+        <path>"/Pictures90/icons8-dancing-90.png"</path>                <!--8-->
+        <answer>E</answer>          
+    </question>
+    <question>
+        <path>"/Pictures90/sitting-down.png"</path>                     <!--6-->
+        <answer>I</answer>          
+    </question>
+</section>
 
-    <question>
-        <path>"/Pictures/exercise.png""</path>
-        <answer>true</answer>
-    </question>
-    <question>
-        <path>"/Pictures/dancing.png"</path>
-        <answer>true</answer>
-    </question>
-    <question>
-        <path>"/Pictures/fast-track.png"</path>
-        <answer>true</answer>
-    </question>
-    <question>
-        <path>"/Pictures/weightlifting.png"</path>
-        <answer>true</answer>
-    </question>
-    <question>
-        <path>"/Pictures/walking.png"</path>
-        <answer>true</answer>
-    </question>
 
-</questions>
+    
+
+</Questions>
