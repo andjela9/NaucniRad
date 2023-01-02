@@ -26,7 +26,7 @@
 
         <TextBlock Grid.Column="0" Visibility="Visible" Grid.ColumnSpan="3" Foreground="Red" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="22" Grid.Row="3" Margin="10,10,10,10" TextAlignment="Center"><Run Text="X "/><LineBreak/><Run Text="Pritisnite drugi taster za nastavak"/></TextBlock>
 
-        <Button Name="E" Grid.Row="3" KeyDown="E_KeyDown" Grid.Column="0" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="Visible">E</Button>
+        <Button Name="E" Grid.Row="3" KeyDown="E_KeyDown" Click="E_Click" Grid.Column="0" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="Visible">E</Button>
         <Button Name="I" Grid.Row="3" KeyDown="I_KeyDown" Grid.Column="2" Height="30" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible" >I</Button>
         <TextBlock Name="Testni" Grid.Row="2" VerticalAlignment="Center"/>
 

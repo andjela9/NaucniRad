@@ -83,7 +83,7 @@ namespace NaucniRad.WPF
 
         private void ExplanationClick(object sender, RoutedEventArgs e)
         {
-            Question question = new Question(1);
+            Question question = new Question(sekcija);
             this.Close();
             question.ShowDialog();
         }

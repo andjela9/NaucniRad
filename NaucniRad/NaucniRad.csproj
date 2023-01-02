@@ -61,6 +61,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Question.cs" />
+    <Compile Include="Model\QuestionOrder.cs" />
     <Compile Include="WPF\Explanation.xaml.cs">
       <DependentUpon>Explanation.xaml</DependentUpon>
     </Compile>

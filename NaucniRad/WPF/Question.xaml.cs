@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NaucniRad.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -73,6 +74,13 @@ namespace NaucniRad.WPF
             if (e.Key == Key.I)
                 Testni.Text = "Kliknuto I";
                 MessageBox.Show("Kliknuto I");
+        }
+
+        private void E_Click(object sender, RoutedEventArgs e)
+        {
+            QuestionOrder questionOrder = new QuestionOrder();
+            MessageBox.Show(questionOrder.Section1QuestionsToSting(questionOrder.section1Questions));
+
         }
     }
 }
