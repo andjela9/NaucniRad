@@ -12,6 +12,7 @@ namespace NaucniRad
     
     public class Ispitanik : INotifyPropertyChanged
     {
+        private int id;
         private string age;
         private string college;
         private string gender;
@@ -20,8 +21,9 @@ namespace NaucniRad
         private int selfAssessment;
         
 
-        public Ispitanik(string age, string college, string gender, string course, string disability, int selfAssessment)
+        public Ispitanik(int id, string age, string college, string gender, string course, string disability, int selfAssessment)
         {
+            this.id = id;
             this.age = age;
             this.college = college;
             this.gender = gender;
@@ -35,6 +37,15 @@ namespace NaucniRad
 
         #region Geteri i seteri
 
+        public int Id
+        {
+            get { return id; }
+            set 
+            { 
+                id = value;
+                OnPropertyChanged("Id");
+            }
+        }
         
         public string Age
         {

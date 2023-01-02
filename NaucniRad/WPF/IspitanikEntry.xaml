@@ -28,7 +28,7 @@
         <TextBlock Grid.Row="3" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="Pol:"/>
         <TextBlock Grid.Row="4" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="Smer:"/>
         <TextBlock Grid.Row="5" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30"><Run Text="Da li ste osoba"/><LineBreak/><Run Text="sa invaliditetom:"/></TextBlock>
-        <Button Grid.Row="6" Name="ispitanikDalje" Click="ispitanikDaljeClick" Grid.Column="2" Margin="20, 30, 20, 30" FontWeight="Bold" FontSize="30" Background="#7CFC00">Dalje ></Button>
+        <Button Grid.Row="6" Name="ispitanikDalje" Click="ispitanikDaljeClick" Grid.Column="2" Margin="20, 30, 20, 30" FontWeight="Bold" FontSize="30" IsDefault="True" Background="#7CFC00">Dalje ></Button>
 
 
        

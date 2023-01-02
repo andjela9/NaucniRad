@@ -1,41 +1,127 @@
 <<?xml version="1.0" encoding="utf-8"?>
 <Questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-<section number=1>      <!--7 10 4 5 4 3 8 6 10 12 7 11 8 9 2 3 2 1 6 9-->
+<group number=1>      <!--7 10 4 5 4 3 8 6 10 12 7 11 8 9 2 3 2 1 6 9-->
     <question>
-        <path>"/Pictures90/exercise90.png"</path>             <!-- ovde ili path ili rec, pa preko zavrsetka .png videti sta je -->
-        <answer>E</answer>                                      <!--ovde odgovor E ili I -->
+        <path>"/Pictures90/disabled-person.png"</path>             <!-- ovde ili path ili rec, pa preko zavrsetka .png videti sta je -->
+        <answer>Disabeled</answer>                                      
     </question>
     <question>
-        <path>"/Pictures90/icons8-fast-track-90.png"</path>             <!--10-->
-        <answer>E</answer>          
+        <path>"/Pictures90/icons8-amputee-90.png"</path>             
+        <answer>Disabeled</answer>          
     </question>
     <question>
-        <path>"/Pictures90/icons8-handicapped-90.png"</path>             <!--4-->
-        <answer>I</answer>          
+        <path>"/Pictures90/icons8-amputee-stairs.png"</path>              
+        <answer>Disabeled</answer>          
     </question>
     <question>
-        <path>"/Pictures90/icons8-wheelchair-90.png"</path>             <!--5-->
-        <answer>I</answer>          
+        <path>"/Pictures90/icons8-handicapped-90.png"</path>              
+        <answer>Disabeled</answer>          
     </question>
     <question>
-        <path>"/Pictures90/icons8-handicapped-90.png"</path>             <!--4-->
-        <answer>I</answer>          
+        <path>"/Pictures90/icons8-wheelchair-90.png"</path>              
+        <answer>Disabeled</answer>          
     </question>
     <question>
-        <path>"/Pictures90/icons8-amputee-90 (1).png"</path>             <!--3-->
-        <answer>I</answer>          
+        <path>"/Pictures90/sitting-down.png"</path>              
+        <answer>Disabeled</answer>          
     </question>
-    <question>
-        <path>"/Pictures90/icons8-dancing-90.png"</path>                <!--8-->
-        <answer>E</answer>          
-    </question>
-    <question>
-        <path>"/Pictures90/sitting-down.png"</path>                     <!--6-->
-        <answer>I</answer>          
-    </question>
-</section>
+</group>
 
+<group number=2>
+    <question>
+        <path>"/Pictures90/exercise90.png"</path>              
+        <answer>Abeled</answer>          
+    </question>
+    <question>
+        <path>"/Pictures90/icons8-dancing-90.png"</path>              
+        <answer>Abeled</answer>          
+    </question>
+    <question>
+        <path>"/Pictures90/icons8-exercise-90.png"</path>              
+        <answer>Abeled</answer>          
+    </question>
+    <question>
+        <path>"/Pictures90/icons8-fast-track-90.png"</path>              
+        <answer>Abeled</answer>          
+    </question>
+    <question>
+        <path>"/Pictures90/icons8-walking-90.png"</path>              
+        <answer>Abeled</answer>          
+    </question>
+    <question>
+        <path>"/Pictures90/icons8-weightlifting-90.png"</path>              
+        <answer>Abeled</answer>          
+    </question>
+</group>
 
-    
+<group number = 3>
+    <question>
+        <path>Trijumf</path>             
+        <answer>Good</answer>          
+    </question>
+    <question>
+        <path>Slavlje</path>            
+        <answer>Good</answer>          
+    </question>
+    <question>
+        <path>Fantastično</path>              
+        <answer>Good</answer>          
+    </question>
+    <question>
+        <path>Uzbuđenost</path>              
+        <answer>Good</answer>          
+    </question>
+    <question>
+        <path>Spektakularno</path>              
+        <answer>Good</answer>          
+    </question>
+    <question>
+        <path>Srećno</path>              
+        <answer>Good</answer>          
+    </question>
+    <question>
+        <path>Smejanje</path>              
+        <answer>Good</answer>          
+    </question>
+    <question>
+        <path>Zadovoljno</path>              
+        <answer>Good</answer>          
+    </question>
+</group>
+
+<group number = 4>
+    <question>
+        <path>Bes</path>             
+        <answer>Bad</answer>          
+    </question>
+    <question>
+        <path>Pokvaren</path>             
+        <answer>Bad</answer>          
+    </question>
+    <question>
+        <path>Zlo</path>             
+        <answer>Bad</answer>          
+    </question>
+    <question>
+        <path>Negativan</path>             
+        <answer>Bad</answer>          
+    </question>
+    <question>
+        <path>Odvratan</path>             
+        <answer>Bad</answer>          
+    </question>
+    <question>
+        <path>Gađenje</path>             
+        <answer>Bad</answer>          
+    </question>
+    <question>
+        <path>Sebičnost</path>             
+        <answer>Bad</answer>          
+    </question>
+    <question>
+        <path>Mržnja</path>             
+        <answer>Bad</answer>          
+    </question>
+</group>
 
 </Questions>

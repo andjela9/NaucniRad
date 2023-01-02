@@ -1,354 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Ispitanici xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Ispitanik>
-    <Age>18</Age>
+    <Id>1</Id>
+    <Age>1</Age>
     <College>FTN</College>
-    <Gender>Muski</Gender>
+    <Gender>Ženski</Gender>
     <Course>prvi</Course>
-    <Disability>Da</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>19</Age>
-    <College>MFUNS</College>
-    <Gender>Zenski</Gender>
-    <Course>drugi</Course>
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
   <Ispitanik>
-    <Age>20</Age>
-    <College>FTN</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>treci</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>21</Age>
-    <College>FTN</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>cetvrti</Course>
-    <Disability>Da</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>30</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>najstariji</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>25</Age>
-    <College>MFUNS</College>
-    <Gender>Muski</Gender>
-    <Course>25</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>28</Age>
-    <College>MFUNS</College>
-    <Gender>Muski</Gender>
-    <Course>28</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>34</Age>
-    <College>MFUNS</College>
-    <Gender>Muski</Gender>
-    <Course>3-4</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>58</Age>
-    <College>FTN</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>qwe</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>99</Age>
-    <College>FTN</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>wert</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>46</Age>
-    <College>FTN</College>
-    <Gender>Zenski</Gender>
-    <Course>e2</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>7</Age>
-    <College>FTN</College>
-    <Gender>Zenski</Gender>
-    <Course>e2</Course>
-    <Disability>Da</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>999</Age>
-    <College>FTN</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>999</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>11</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>111</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>12</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>12</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>100</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>erttu</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>12345</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>189</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>12</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>ert</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>11</Age>
-    <College>MFUNS</College>
-    <Gender>Muski</Gender>
-    <Course>ert</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>345</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>eer</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>12</Age>
-    <College>MFUNS</College>
-    <Gender>Muski</Gender>
-    <Course>erty</Course>
-    <Disability>Da</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>1</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>ert</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>4</Age>
-    <College>MFUNS</College>
-    <Gender>Zenski</Gender>
-    <Course>123</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>56</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>qwe</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>123</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>ert</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>124</Age>
-    <College>MFUNS</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>ruii</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>99</Age>
-    <College>FTN</College>
-    <Gender>Ne zelim da se izjasnim</Gender>
-    <Course>qed</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>11</Age>
-    <College>MFUNS</College>
-    <Gender>Ne želim da se izjasnim</Gender>
-    <Course>ert</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>45</Age>
-    <College>MFUNS</College>
-    <Gender>Ženski</Gender>
-    <Course>qwe</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>12</Age>
-    <College>MFUNS</College>
-    <Gender>Ženski</Gender>
-    <Course>as</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>12</Age>
-    <College>MFUNS</College>
-    <Gender>Ženski</Gender>
-    <Course>fg</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>6</Age>
-    <College>MFUNS</College>
-    <Gender>Ženski</Gender>
-    <Course>ADG</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>1</Age>
-    <College>FTN</College>
-    <Gender>Ne želim da se izjasnim</Gender>
-    <Course>BDHET</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>58</Age>
-    <College>FTN</College>
-    <Gender>Ne želim da se izjasnim</Gender>
-    <Course>ADVBADV</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>24</Age>
-    <College>MFUNS</College>
-    <Gender>Muški</Gender>
-    <Course>GVBSV</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>2414</Age>
-    <College>MFUNS</College>
-    <Gender>Ženski</Gender>
-    <Course>GRWRG</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>124</Age>
-    <College>MFUNS</College>
-    <Gender>Muški</Gender>
-    <Course>EFVAEQE</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>123</Age>
-    <College>MFUNS</College>
-    <Gender>Ne želim da se izjasnim</Gender>
-    <Course>er</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>156</Age>
-    <College>MFUNS</College>
-    <Gender>Muški</Gender>
-    <Course>ntymtc</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
-    <Age>12</Age>
-    <College>MFUNS</College>
-    <Gender>Muški</Gender>
-    <Course>nrs</Course>
-    <Disability>Ne</Disability>
-    <SelfAssessment>0</SelfAssessment>
-  </Ispitanik>
-  <Ispitanik>
+    <Id>2</Id>
     <Age>22</Age>
     <College>MFUNS</College>
-    <Gender>Muški</Gender>
-    <Course>Logopedija</Course>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>cd</Course>
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
   <Ispitanik>
+    <Id>3</Id>
+    <Age>13</Age>
+    <College>MFUNS</College>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>tri</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>4</Id>
     <Age>34</Age>
     <College>MFUNS</College>
-    <Gender>Ženski</Gender>
-    <Course>feaeagfva</Course>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>gb reh</Course>
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
   <Ispitanik>
-    <Age>35</Age>
+    <Id>5</Id>
+    <Age>23</Age>
     <College>MFUNS</College>
-    <Gender>Ne želim da se izjasnim</Gender>
-    <Course>jmnzfgnxd</Course>
+    <Gender>Muški</Gender>
+    <Course>vss\v</Course>
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
   <Ispitanik>
-    <Age>4</Age>
+    <Id>6</Id>
+    <Age>123</Age>
     <College>MFUNS</College>
     <Gender>Ne želim da se izjasnim</Gender>
-    <Course>jyjnd</Course>
+    <Course>sfvs </Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>7</Id>
+    <Age>12</Age>
+    <College>MFUNS</College>
+    <Gender>Muški</Gender>
+    <Course>dscd </Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>8</Id>
+    <Age>21</Age>
+    <College>FTN</College>
+    <Gender>Muški</Gender>
+    <Course>SAC DASC</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>9</Id>
+    <Age>21</Age>
+    <College>MFUNS</College>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>SXCqcx</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>10</Id>
+    <Age>  23</Age>
+    <College>MFUNS</College>
+    <Gender>Muški</Gender>
+    <Course>wcaw</Course>
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>

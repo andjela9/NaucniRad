@@ -32,10 +32,10 @@
         <TextBlock Grid.Row="3" Grid.Column="0" Margin="20" Text="Loše" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Margin="20" Text="Osoba sa invaliditetom" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="5" Grid.Column="0" Margin="20" Text="Osoba bez invaliditeta" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <StackPanel Grid.Row="4" Grid.Column="1" Margin="10" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="4" Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Right">
             <Image Source="/Pictures90/disabled-person.png" Height="45" Width="45" Margin="0,0,30, 0"/>
             <Image Source="/Pictures90/icons8-amputee-90.png" Height="45" Width="45" Margin="0,0,30, 0" />
-            <Image Source="/Pictures90/icons8-amputee-90 (1).png" Height="45" Width="45" Margin="0,0,30, 0"/>
+            <Image Source="/Pictures90/icons8-amputee-stairs.png" Height="45" Width="45" Margin="0,0,30, 0"/>
             <Image Source="/Pictures90/icons8-handicapped-90.png" Height="45" Width="45"  Margin="0,0,30, 0"/>
             <Image Source="/Pictures90/icons8-wheelchair-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
             <Image Source="/Pictures90/sitting-down.png" Height="45" Width="45" Margin="0,0,30, 0"/>
@@ -50,7 +50,7 @@
         </StackPanel>
         
         <TextBlock Grid.Row="6" Grid.Column="0" Margin="10,0,0,0" FontWeight="Bold" VerticalAlignment="Bottom" FontSize="16" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="Postoji sedam delova. Instrukcije se menjaju za svaki deo. Obratite pažnju!"/>
-        <Button Grid.Row="7" Name="explanationDalje" Click="explanationDalje_Click" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="90" Height="40" FontWeight="Bold" Margin="10,0,10,0" FontSize="20" Background="#7CFC00">Dalje ></Button>
+        <Button Grid.Row="7" Name="explanationDalje" Click="explanationDalje_Click" IsDefault="True" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="90" Height="40" FontWeight="Bold" Margin="10,0,10,0" FontSize="20" Background="#7CFC00">Dalje ></Button>
 
     </Grid>
 </Window>

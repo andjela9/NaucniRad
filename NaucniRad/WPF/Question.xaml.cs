@@ -60,5 +60,19 @@ namespace NaucniRad.WPF
             }
 
         }
+
+        private void E_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.E)
+                Testni.Text = "Kliknuto E";
+            MessageBox.Show("Kliknuto E");
+        }
+
+        private void I_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.I)
+                Testni.Text = "Kliknuto I";
+                MessageBox.Show("Kliknuto I");
+        }
     }
 }

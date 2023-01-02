@@ -52,7 +52,7 @@ namespace NaucniRad.WPF
                 ucitanaLista = (from ispitanik in data.Descendants("Ispitanik")
                                 select new Ispitanik
                                 {
-
+                                    Id = Int32.Parse(ispitanik.Element("Id").Value),
                                     Age = ispitanik.Element("Age").Value,
                                     College = ispitanik.Element("College").Value,
                                     Gender = ispitanik.Element("Gender").Value,
@@ -197,7 +197,7 @@ namespace NaucniRad.WPF
             string s = "Iz forme u listu:***\n";
             foreach(var ispitanik in ispitaniciLista)
             {
-                s+= ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n" + ispitanik.Course + "\n" + ispitanik.Disability + "\n";
+                s+= ispitanik.Id + "\n" + ispitanik.Age + "\n" + ispitanik.College + "\n" + ispitanik.Gender + "\n" + ispitanik.Course + "\n" + ispitanik.Disability + "\n";
             }
             return s;
         }
@@ -227,10 +227,13 @@ namespace NaucniRad.WPF
                 #endregion
 
                 //upis u xml
-                Ispitanik fix = new Ispitanik(noviIspitanik.Age, noviIspitanik.College, noviIspitanik.Gender, noviIspitanik.Course, noviIspitanik.Disability, noviIspitanik.SelfAssessment);
+                int id = ucitanaLista.Count() + 1;
+                Ispitanik fix = new Ispitanik(id, noviIspitanik.Age, noviIspitanik.College, noviIspitanik.Gender, noviIspitanik.Course, 
+                                                noviIspitanik.Disability, noviIspitanik.SelfAssessment);
                 ucitanaLista.Add(fix);
-                MessageBox.Show("Poslednji unos: \n" +  "\nGodine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + noviIspitanik.Gender + "\nSmer: " 
-                    + noviIspitanik.Course + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability + "\nBroj elemenata u listi: " + ucitanaLista.Count.ToString() + "\n" );
+                MessageBox.Show("Poslednji unos: \n" + "\nId: " + id +  "\nGodine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + 
+                    noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability 
+                    + "\nBroj elemenata u listi: " + ucitanaLista.Count.ToString() + "\n" );
 
                 //MessageBox.Show(ListToString(ispitaniciLista));
                 string s = "Lista iz programa\n";
@@ -247,7 +250,6 @@ namespace NaucniRad.WPF
                     writer.Close();
                 }
 
-                //TODO: linq upitom upisati ucitanaLista u xml
                 Explanation2 exp2 = new Explanation2();
                 this.Close();
                 exp2.ShowDialog();
