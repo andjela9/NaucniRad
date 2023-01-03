@@ -88,6 +88,9 @@ namespace NaucniRad.WPF
             }
 
 
+            //Slika.Source = new BitmapImage(new Uri(@"/Pictures90/icons8-dancing-90.png", UriKind.Relative));
+            string path = ChangeItem(items, 1);
+
         }
 
         private void E_KeyDown(object sender, KeyEventArgs e)
@@ -114,5 +117,13 @@ namespace NaucniRad.WPF
         {
 
         }
+
+        private string ChangeItem(List<Question> items, int i)
+        {
+            string ret = items[i].Path;
+
+            return ret;
+        }
+        
     }
 }

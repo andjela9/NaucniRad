@@ -60,6 +60,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\AllAnswers.cs" />
+    <Compile Include="Model\Answer.cs" />
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\QuestionOrder.cs" />
     <Compile Include="WPF\Explanation.xaml.cs">

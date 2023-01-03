@@ -21,14 +21,6 @@ namespace NaucniRad.Model
         public List<Question> section7Questions = new List<Question>();
 
 
-        //public List<Question> allWords = new List<Question>();
-        //public List<String> good = new List<String>() { "Trijumf", "Slavlje", "Fantastično", "Uzbuđenost", "Spektakularno", "Srećno", "Smejanje", "Zadovoljno" };
-        //public List<String> bad = new List<String>() { "Bes", "Pokvaren", "Zlo", "Negativan", "Odvratan", "Gađenje", "Sebičnost", "Mržnja" };
-
-
-
-
-
         public QuestionOrder() {
             this.allQuestions = GetAllQuestions();
             this.section1Questions = GetSection1Questions(allQuestions);

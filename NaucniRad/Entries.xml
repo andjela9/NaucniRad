@@ -252,4 +252,31 @@
     <Disability>Ne</Disability>
     <SelfAssessment>0</SelfAssessment>
   </Ispitanik>
+  <Ispitanik>
+    <Id>29</Id>
+    <Age>23</Age>
+    <College>MFUNS</College>
+    <Gender>Muški</Gender>
+    <Course>tbhstrg</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>30</Id>
+    <Age>98</Age>
+    <College>MFUNS</College>
+    <Gender>Muški</Gender>
+    <Course>gtgw</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>31</Id>
+    <Age>67</Age>
+    <College>MFUNS</College>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>vhk hk</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>0</SelfAssessment>
+  </Ispitanik>
 </Ispitanici>
