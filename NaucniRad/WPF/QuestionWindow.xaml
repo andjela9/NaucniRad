@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NaucniRad.WPF"
         mc:Ignorable="d"
-        Title="QuestionWindow" Height="450" Width="800">
+        Title="QuestionWindow" Height="450" Width="800" IsTabStop="False">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -26,10 +26,9 @@
 
         <TextBlock Grid.Column="0" Visibility="Visible" Grid.ColumnSpan="3" Foreground="Red" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="22" Grid.Row="3" Margin="10,10,10,10" TextAlignment="Center"><Run Text="X "/><LineBreak/><Run Text="Pritisnite drugi taster za nastavak"/></TextBlock>
 
-        <Button Name="E" Grid.Row="3" KeyDown="E_KeyDown" Click="E_Click" Grid.Column="0" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="Visible">E</Button>
-        <Button Name="I" Grid.Row="3" KeyDown="I_KeyDown" Click="I_Click" Grid.Column="2" Height="30" Width="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible" >I</Button>
-        <TextBlock Name="Testni" Grid.Row="2" VerticalAlignment="Center"/>
 
+        <TextBlock Name="Testni" Grid.Row="2" VerticalAlignment="Center"/>
+        <Button Name="Dugme"  ForceCursor="True" IsDefault="True"  Focusable="True" KeyDown="Button_KeyDown" Grid.Row="3" Grid.Column="1" Height="1" Width="1" VerticalAlignment="Top" BorderBrush="White"  Foreground="White" Background="White"></Button>
 
 
 

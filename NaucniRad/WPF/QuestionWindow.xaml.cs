@@ -10,8 +10,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace NaucniRad.WPF
 {
@@ -25,6 +28,8 @@ namespace NaucniRad.WPF
             InitializeComponent();
             QuestionOrder questionOrder = new QuestionOrder();
             List<Question> items = new List<Question>();
+            //Dugme.Focusable = true;
+            Dugme.Focus();
 
             switch (sekcija)
             {
@@ -88,42 +93,77 @@ namespace NaucniRad.WPF
             }
 
 
-            //Slika.Source = new BitmapImage(new Uri(@"/Pictures90/icons8-dancing-90.png", UriKind.Relative));
-            string path = ChangeItem(items, 1);
+            Slika.Source = new BitmapImage(new Uri(@"/Pictures90/icons8-dancing-90.png", UriKind.Relative));
+            //string path = ChangeItem(items, 1);
+
+        }
+
+        private void Button_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.E && e.IsDown)
+            {
+                this.E_Click(sender, e);
+                Testni.Text = "E_KeyDown";
+                //MessageBox.Show("E_KeyDown");
+            }
+            else if(e.Key == Key.I && e.IsDown)
+            {
+                this.I_Click(sender, e);
+                Testni.Text = "I_KeyDown";
+                //MessageBox.Show("I_KeyDown");
+            } 
+        }
+        //private void E_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBox.Show("E_Click");
+        //}
+
+        //private void I_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MessageBox.Show("I_Click");
+        //}
+
+        private void E_Click(object sender, KeyEventArgs e)
+        {
+            //MessageBox.Show("E: neka akcija");
+        }
+
+        private void I_Click(object sender, KeyEventArgs e)
+        {
+            //MessageBox.Show("I: neka akcija");
+        }
+
+
+        private void I_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.Key == Key.I)
+            //{
+            //    this.I_Click(sender, e);
+            //    Testni.Text = "I_KeyDown";
+            //    MessageBox.Show("I_KeyDown");
+            //}
 
         }
 
         private void E_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.E)
-                Testni.Text = "Kliknuto E";
-            MessageBox.Show("Kliknuto E");
-        }
-
-        private void I_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.I)
-                Testni.Text = "Kliknuto I";
-                MessageBox.Show("Kliknuto I");
-        }
-
-        private void E_Click(object sender, RoutedEventArgs e)
-        {
-            
 
         }
 
-        private void I_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private string ChangeItem(List<Question> items, int i)
         {
             string ret = items[i].Path;
+            //moze ovde da vraca listu ciji su elementi uredjeni parovi path i iteracija
+            //pa ako su answer i ono stisnuto jednaki, uveca se br iteracije i tako se vrati
 
             return ret;
         }
-        
+
+      
     }
 }
+
+//<Button Name="E" Grid.Row="3" KeyDown="E_KeyDown" Click="E_Click" Grid.Column="0" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Bottom" Visibility="Visible">E</Button>
+//        < Button Name = "I" Grid.Row = "3" KeyDown = "I_KeyDown" Click = "I_Click" Grid.Column = "2" Height = "30" Width = "30" HorizontalAlignment = "Right" VerticalAlignment = "Bottom" Visibility = "Visible" > I </ Button >
