@@ -71,8 +71,8 @@
     <Compile Include="WPF\IspitanikEntry.xaml.cs">
       <DependentUpon>IspitanikEntry.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Question.xaml.cs">
-      <DependentUpon>Question.xaml</DependentUpon>
+    <Compile Include="WPF\QuestionWindow.xaml.cs">
+      <DependentUpon>QuestionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\SelfAssessment.xaml.cs">
       <DependentUpon>SelfAssessment.xaml</DependentUpon>
@@ -101,7 +101,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Question.xaml">
+    <Page Include="WPF\QuestionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,47 +18,75 @@ namespace NaucniRad.WPF
     /// <summary>
     /// Interaction logic for Question.xaml
     /// </summary>
-    public partial class Question : Window
+    public partial class QuestionWindow : Window
     {
-        public Question(int sekcija)
+        public QuestionWindow(int sekcija)
         {
             InitializeComponent();
+            QuestionOrder questionOrder = new QuestionOrder();
+            List<Question> items = new List<Question>();
 
             switch (sekcija)
             {
                 case 1:
                     kategorijaLevoTxt.Text = "Osoba BEZ invaliditeta";
                     kategorijaDesnoTxt.Text = "Osoba SA invaliditetom";
+                    foreach(Question q in questionOrder.section1Questions)
+                    {
+                        items.Add(q);
+                    }
                     break;
                 case 2:
                     kategorijaLevoTxt.Text = "Loše";
                     kategorijaDesnoTxt.Text = "DOBRO";
+                    foreach (Question q in questionOrder.section2Questions)
+                    {
+                        items.Add(q);
+                    }
                     break;
                 case 3:
                     kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
                     kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
+                    foreach (Question q in questionOrder.section3Questions)
+                    {
+                        items.Add(q);
+                    }
                     break;
                 case 4:
                     kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
                     kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
+                    foreach (Question q in questionOrder.section4Questions)
+                    {
+                        items.Add(q);
+                    }
                     break;
                 case 5:
                     kategorijaLevoTxt.Text = "Osoba SA invaliditetom";
                     kategorijaDesnoTxt.Text = "Osoba BEZ invaliditeta";
+                    //TODO: ucitati items za sekciju 5
                     break;
                 case 6:
                     kategorijaLevoTxt.Text = "LOŠE\nOsoba SA invaliditetom";
                     kategorijaDesnoTxt.Text = "DOBRO\nOsoba BEZ invaliditeta";
+                    foreach (Question q in questionOrder.section6Questions)
+                    {
+                        items.Add(q);
+                    }
                     break;
                 case 7:
                     kategorijaLevoTxt.Text = "LOŠE\nOsoba SA invaliditetom";
                     kategorijaDesnoTxt.Text = "DOBRO\nOsoba BEZ invaliditeta";
+                    foreach (Question q in questionOrder.section7Questions)
+                    {
+                        items.Add(q);
+                    }
                     break;
                 default:
                     kategorijaDesnoTxt.Text = "";
                     kategorijaLevoTxt.Text = "";
                     break;
             }
+
 
         }
 
@@ -78,8 +106,12 @@ namespace NaucniRad.WPF
 
         private void E_Click(object sender, RoutedEventArgs e)
         {
-            QuestionOrder questionOrder = new QuestionOrder();
-            MessageBox.Show(questionOrder.Section1QuestionsToSting(questionOrder.section1Questions));
+            
+
+        }
+
+        private void I_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
