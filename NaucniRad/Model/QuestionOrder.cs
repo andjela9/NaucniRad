@@ -27,7 +27,7 @@ namespace NaucniRad.Model
             this.section2Questions= GetSection2Questions(allQuestions);
             this.section3Questions = GetSection3Questions(allQuestions);
             this.section4Questions = GetSection4Questions(allQuestions);
-            //this.section5Questions = GetSection2Questions(allQuestions);
+            //this.section5Questions = GetSection5Questions(allQuestions);
             this.section6Questions = GetSection6Questions(allQuestions);
             this.section7Questions = GetSection7Questions(allQuestions);
         }
@@ -89,11 +89,12 @@ namespace NaucniRad.Model
             return section4Questions;
         }
 
-        //public List<Question> GetSection5Questions(List<Question> allQuestions)
-        //{
+
+        public List<Question> GetSection5Questions(List<Question> allQuestions)
+        {
             //TODO
-            //return null;
-        //}
+            return null;
+        }
 
         public List<Question> GetSection6Questions(List<Question> allQuestions)
         {

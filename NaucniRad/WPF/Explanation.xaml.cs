@@ -21,11 +21,12 @@ namespace NaucniRad.WPF
     {
 
         //ucitati sekciju
-        
+        int prosledjenaSekcija;
         public Explanation(int sekcija)
         {
             InitializeComponent();
-
+            prosledjenaSekcija = sekcija;
+            //MessageBox.Show(prosledjenaSekcija.ToString());
             switch (sekcija)
             {
                 case 1:
@@ -70,7 +71,6 @@ namespace NaucniRad.WPF
                     sekcijaBrojTxt.Text = "Sekcija 7 od 7";
                     objasnjenjeTxt.Text = "Dugacak tekst 7";
                     break;
-
                 default:
                     kategorijaDesnoTxt.Text = "";
                     kategorijaLevoTxt.Text = "";
@@ -83,7 +83,7 @@ namespace NaucniRad.WPF
 
         private void OpenQuestionWindow()
         {
-            QuestionWindow questionWindow = new QuestionWindow(sekcija);
+            QuestionWindow questionWindow = new QuestionWindow(prosledjenaSekcija);
             this.Close();
             questionWindow.ShowDialog();
         }

@@ -26,7 +26,7 @@ namespace NaucniRad.WPF
 
         private void explanationDalje_Click(object sender, RoutedEventArgs e)
         {
-            Explanation expl = new Explanation();
+            Explanation expl = new Explanation(1);
             this.Close();
             expl.ShowDialog();
         }
