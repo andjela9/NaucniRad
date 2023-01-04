@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace NaucniRad.WPF
 {
     /// <summary>
-    /// Interaction logic for Explanation2.xaml
+    /// Interaction logic for Introduction.xaml
     /// </summary>
-    public partial class Explanation2 : Window
+    public partial class Introduction : Window
     {
-        public Explanation2()
+        public Introduction()
         {
             InitializeComponent();
         }

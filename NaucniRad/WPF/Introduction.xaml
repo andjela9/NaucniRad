@@ -1,11 +1,11 @@
-﻿<Window x:Class="NaucniRad.WPF.Explanation2"
+﻿<Window x:Class="NaucniRad.WPF.Introduction"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NaucniRad.WPF"
         mc:Ignorable="d"
-        Title="Explanation2" Height="450" Width="800">
+        Title="Introduction" Height="500" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1.2*"/>
@@ -26,13 +26,13 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Margin="20,0,0,0" Text="Kategorija" TextAlignment="Left" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
         <TextBlock Grid.Row="1" Grid.Column="1"  Margin="20,0,0,0" Text="Stavke" TextAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Margin="20" Text="Dobro" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" Margin="10" FontSize="18"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Trijumf,   slavlje,   fantastično,   uzbuđenost, "/><LineBreak/><Run Text="spektakularno,   srećno,   smejanje,   zadovoljno"/></TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="1" Margin="10" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Bes,   pokvaren,   zlo,   negativan,  "/><LineBreak/><Run Text="odvratan,   gađenje,   sebičnost,   mržnja"/></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1" Margin="30, 0, 30, 0" FontSize="18"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Trijumf,   slavlje,   fantastično,   uzbuđenost, "/><LineBreak/><Run Text="spektakularno,   srećno,   smejanje,   zadovoljno"/></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="30, 0, 30, 0" FontSize="18" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Bes,   pokvaren,   zlo,   negativan,  "/><LineBreak/><Run Text="odvratan,   gađenje,   sebičnost,   mržnja"/></TextBlock>
 
         <TextBlock Grid.Row="3" Grid.Column="0" Margin="20" Text="Loše" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Margin="20" Text="Osoba sa invaliditetom" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="5" Grid.Column="0" Margin="20" Text="Osoba bez invaliditeta" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
-        <StackPanel Grid.Row="4" Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="4" Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Center">
             <Image Source="/Pictures90/disabled-person.png" Height="45" Width="45" Margin="0,0,30, 0"/>
             <Image Source="/Pictures90/icons8-amputee-90.png" Height="45" Width="45" Margin="0,0,30, 0" />
             <Image Source="/Pictures90/icons8-amputee-stairs.png" Height="45" Width="45" Margin="0,0,30, 0"/>
@@ -40,7 +40,7 @@
             <Image Source="/Pictures90/icons8-wheelchair-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
             <Image Source="/Pictures90/sitting-down.png" Height="45" Width="45" Margin="0,0,30, 0"/>
         </StackPanel>
-        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Image Source="/Pictures90/exercise90.png" Height="45" Width="45" Margin="0,0,30, 0" />
             <Image Source="/Pictures90/icons8-dancing-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
             <Image Source="/Pictures90/icons8-exercise-90.png" Height="45" Width="45" Margin="0,0,30, 0" />

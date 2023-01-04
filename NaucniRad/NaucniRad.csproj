@@ -68,8 +68,8 @@
     <Compile Include="WPF\Explanation.xaml.cs">
       <DependentUpon>Explanation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WPF\Explanation2.xaml.cs">
-      <DependentUpon>Explanation2.xaml</DependentUpon>
+    <Compile Include="WPF\Introduction.xaml.cs">
+      <DependentUpon>Introduction.xaml</DependentUpon>
     </Compile>
     <Compile Include="WPF\IspitanikEntry.xaml.cs">
       <DependentUpon>IspitanikEntry.xaml</DependentUpon>
@@ -96,7 +96,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WPF\Explanation2.xaml">
+    <Page Include="WPF\Introduction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -21,8 +21,8 @@ namespace NaucniRad.WPF
     {
 
         //ucitati sekciju
-        int sekcija = 1;
-        public Explanation()
+        
+        public Explanation(int sekcija)
         {
             InitializeComponent();
 
@@ -81,11 +81,16 @@ namespace NaucniRad.WPF
             //case za sekciju
         }
 
-        private void ExplanationClick(object sender, RoutedEventArgs e)
+        private void OpenQuestionWindow()
         {
             QuestionWindow questionWindow = new QuestionWindow(sekcija);
             this.Close();
             questionWindow.ShowDialog();
+        }
+
+        private void ExplanationClick(object sender, RoutedEventArgs e)
+        {
+            this.OpenQuestionWindow();
         }
     }
 }

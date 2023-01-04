@@ -80,7 +80,8 @@ namespace NaucniRad.Model
 
         public List<Question> GetSection4Questions(List<Question> allQuestions)
         {
-            List<int> Section4 = new List<int>() { 25, 18, 3, 11, 24, 2, 26, 23, 28, 6, 20, 15, 6, 27, 7, 19, 1, 23, 13, 12, 10, 21, 5, 25, 13, 10, 1, 22, 14, 20, 4, 16, 8, 9, 17, 4, 7, 8, 11, 5 };
+            List<int> Section4 = new List<int>() { 25, 18, 3, 11, 24, 2, 26, 23, 28, 6, 20, 15, 6, 27, 7, 19, 1, 23, 13, 12, 
+                                                    10, 21, 5, 25, 13, 10, 1, 22, 14, 20, 4, 16, 8, 9, 17, 4, 7, 8, 11, 5 };
             foreach (int num in Section4)
             {
                 section4Questions.Add(allQuestions[num - 1]);
@@ -106,7 +107,8 @@ namespace NaucniRad.Model
 
         public List<Question> GetSection7Questions(List<Question> allQuestions)
         {
-            List<int> Section7 = new List<int>() { 20, 12, 6, 27, 9, 22, 21, 14, 3, 11, 17, 4, 26, 10, 19, 8, 20, 13, 5, 1 };
+            List<int> Section7 = new List<int>() { 22, 12, 1, 24, 27, 7, 5, 21, 10, 23, 11, 14, 26, 14, 9, 15, 8, 3, 20, 15, 8, 3, 
+                                                    20, 15, 2, 7, 21, 5, 22, 18, 17, 13, 11, 6, 16, 8, 25, 3, 19, 4, 12, 1, 4, 28 };
             foreach (int num in Section7)
             {
                 section7Questions.Add(allQuestions[num - 1]);

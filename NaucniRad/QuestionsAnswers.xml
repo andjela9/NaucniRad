@@ -2,55 +2,55 @@
 <Questions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
      <!--7 10 4 5 4 3 8 6 10 12 7 11 8 9 2 3 2 1 6 9-->
     <Question>
-        <Path>"/Pictures90/disabled-person.png"</Path>             <!--1-->
-        <Answer>Disabeled</Answer>                                      
+        <Path>/Pictures90/disabled-person.png</Path>             <!--1-->
+        <Answer>Disabled</Answer>                                      
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-amputee-90.png"</Path>           <!--2-->  
-        <Answer>Disabeled</Answer>          
+        <Path>/Pictures90/icons8-amputee-90.png</Path>           <!--2-->  
+        <Answer>Disabled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-amputee-stairs.png"</Path>           <!--3-->   
-        <Answer>Disabeled</Answer>          
+        <Path>/Pictures90/icons8-amputee-stairs.png</Path>           <!--3-->   
+        <Answer>Disabled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-handicapped-90.png"</Path>           <!--4-->   
-        <Answer>Disabeled</Answer>          
+        <Path>/Pictures90/icons8-handicapped-90.png</Path>           <!--4-->   
+        <Answer>Disabled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-wheelchair-90.png"</Path>              <!--5-->
-        <Answer>Disabeled</Answer>          
+        <Path>/Pictures90/icons8-wheelchair-90.png</Path>              <!--5-->
+        <Answer>Disabled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/sitting-down.png"</Path>                     <!--6-->
-        <Answer>Disabeled</Answer>          
+        <Path>/Pictures90/sitting-down.png</Path>                     <!--6-->
+        <Answer>Disabled</Answer>          
     </Question>
 
 
 
     <Question>
-        <Path>"/Pictures90/exercise90.png"</Path>                       <!--7-->
-        <Answer>Abeled</Answer>          
+        <Path>/Pictures90/exercise90.png</Path>                       <!--7-->
+        <Answer>Abled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-dancing-90.png"</Path>              <!--8-->
-        <Answer>Abeled</Answer>          
+        <Path>/Pictures90/icons8-dancing-90.png</Path>              <!--8-->
+        <Answer>Abled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-exercise-90.png"</Path>              <!--9-->
-        <Answer>Abeled</Answer>          
+        <Path>/Pictures90/icons8-exercise-90.png</Path>              <!--9-->
+        <Answer>Abled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-fast-track-90.png"</Path>              <!--10-->
-        <Answer>Abeled</Answer>          
+        <Path>/Pictures90/icons8-fast-track-90.png</Path>              <!--10-->
+        <Answer>Abled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-walking-90.png"</Path>                <!--11-->
-        <Answer>Abeled</Answer>          
+        <Path>/Pictures90/icons8-walking-90.png</Path>                <!--11-->
+        <Answer>Abled</Answer>          
     </Question>
     <Question>
-        <Path>"/Pictures90/icons8-weightlifting-90.png"</Path>             <!--12--> 
-        <Answer>Abeled</Answer>          
+        <Path>/Pictures90/icons8-weightlifting-90.png</Path>             <!--12--> 
+        <Answer>Abled</Answer>          
     </Question>
 
 

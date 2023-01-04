@@ -250,9 +250,9 @@ namespace NaucniRad.WPF
                     writer.Close();
                 }
 
-                Explanation2 exp2 = new Explanation2();
+                Introduction introduction = new Introduction();
                 this.Close();
-                exp2.ShowDialog();
+                introduction.ShowDialog();
 
                
             }
