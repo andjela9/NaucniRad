@@ -35,7 +35,7 @@ namespace NaucniRad.Model
 
         public override string ToString()
         {
-            return "\nAnswer: " + "\n Miliseconds: " +  this.Miliseconds.ToString() + "\n Number of errors: " + this.NumberOfErrors.ToString() + "\n Correct answer: " + this.CorrectAnswer;
+            return "*** " + " Miliseconds: " +  this.Miliseconds.ToString() + " Number of errors: " + this.NumberOfErrors.ToString() + " Correct answer: " + this.CorrectAnswer;
         }
     }
 }

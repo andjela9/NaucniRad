@@ -163,9 +163,9 @@ namespace NaucniRad.WPF
         {
             //this.ispisiItems();                 //ovo se izvrsi na bilo koji taster
             
-            Question currentQuestion = this.ChangeItem();
+            //Question currentQuestion = this.ChangeItem();
             //ovde neka provera ako se zavrsava sa png da bude slika a text null, a ako ne slika je null a tekst je iz path
-            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+            //Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
             
             //TODO: zastiti i od prekoracenja, tj pozovi NextSection kad zavrsi sve
             if(i == items.Count - 1)
@@ -212,7 +212,7 @@ namespace NaucniRad.WPF
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
                         allAnswers.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
                         //Testni.Text = "I_KeyDown i tacan odgovor";
@@ -679,14 +679,21 @@ namespace NaucniRad.WPF
             //MessageBox.Show("Kraj sekcije");
             if (prosledjenjaSekcija == 7)
             {
-               
+                Testiranje testiranje = new Testiranje(allAnswers.ToString());
+                this.Close();
+                testiranje.Show();
                 
                 Thanks thanks = new Thanks();
                 this.Close();
-                thanks.ShowDialog();
+                thanks.Show();
             }
             else
             {
+                string s = allAnswers.ToString();
+                Testiranje testiranje = new Testiranje(s);
+                this.Close();
+                testiranje.Show();
+
                 Explanation expl = new Explanation(prosledjenjaSekcija + 1);
                 this.Close();
                 expl.ShowDialog();
