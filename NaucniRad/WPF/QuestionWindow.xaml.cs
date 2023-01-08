@@ -30,8 +30,18 @@ namespace NaucniRad.WPF
         int prosledjenjaSekcija;
         Stopwatch stopwatch = new Stopwatch();
         Answer answer = new Answer();
-        AllAnswers allAnswers= new AllAnswers();
+
+        AllAnswers allAnswers1 = new AllAnswers();
+        AllAnswers allAnswers2 = new AllAnswers();
+        AllAnswers allAnswers3 = new AllAnswers();
+        AllAnswers allAnswers4 = new AllAnswers();
+        AllAnswers allAnswers5 = new AllAnswers();
+        AllAnswers allAnswers6 = new AllAnswers();
+        AllAnswers allAnswers7 = new AllAnswers();
+        
         int errors = 0;
+        Question currentQuestion = new Question();
+        
         
         public QuestionWindow(int sekcija)
         {
@@ -109,7 +119,7 @@ namespace NaucniRad.WPF
             //POSLE OVOGA SE ITEMS NAPUNE KAKO TREBA, VIDLJIVO JE SPOLJA
             
             
-            Question currentQuestion = this.ChangeItem();
+             currentQuestion = this.ChangeItem();
             if (currentQuestion.Path.EndsWith(".png"))
             {
                 Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
@@ -162,32 +172,34 @@ namespace NaucniRad.WPF
         private void Button_KeyDown(object sender, KeyEventArgs e)
         {
             //this.ispisiItems();                 //ovo se izvrsi na bilo koji taster
-            
-            //Question currentQuestion = this.ChangeItem();
+
+            // currentQuestion = this.ChangeItem();
             //ovde neka provera ako se zavrsava sa png da bude slika a text null, a ako ne slika je null a tekst je iz path
             //Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-            
+
             //TODO: zastiti i od prekoracenja, tj pozovi NextSection kad zavrsi sve
-            if(i == items.Count - 1)
-            {
-                this.NextSection();
-            }
+
+            //if (i == items.Count - 1)
+            //{
+            //    this.NextSection();
+            //}
 
             switch (prosledjenjaSekcija)
             {
                 case 1:
                     Reci.Visibility = Visibility.Hidden;
-                    allAnswers.Section = 1;
+                    
+                    allAnswers1.Section = 1;
                     if (e.Key == Key.E && e.IsDown && currentQuestion.Answer == "Disabled")
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;        //predji na sledece pitanje
+                               //predji na sledece pitanje
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers1.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
@@ -196,31 +208,43 @@ namespace NaucniRad.WPF
                         //MessageBox.Show("E_KeyDown i tacan odgovor");
                         errors = 0;
                         answer.NumberOfErrors = 0;
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                        
+
                         
                     }
                     else if (e.Key == Key.I && e.IsDown && currentQuestion.Answer == "Abled")
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                        
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers1.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
                         //Testni.Text = "I_KeyDown i tacan odgovor";
                         //MessageBox.Show("I_KeyDown i tacan odgovor");
                         errors = 0;
                         answer.NumberOfErrors = 0;
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+
+                        
                     }
                     else if (e.Key == Key.E && e.IsDown && currentQuestion.Answer == "Abled")
                     {
@@ -249,41 +273,52 @@ namespace NaucniRad.WPF
                 case 2:
                     Slika.Visibility = Visibility.Hidden;
                     Reci.Visibility = Visibility.Visible;
-                    allAnswers.Section = 2;
+                    
+                    allAnswers2.Section = 2;
                     if (e.Key == Key.E && e.IsDown && currentQuestion.Answer == "Bad")
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                        
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers2.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
                         Testni.Text = "E_KeyDown i tacan odgovor";
-                        currentQuestion= this.ChangeItem();
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
+                        currentQuestion = this.ChangeItem();
                         Reci.Text = currentQuestion.Path;
                     }
                     else if(e.Key == Key.I && e.IsDown && currentQuestion.Answer == "Good")
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                        
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers2.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
                         Testni.Text = "I_KeyDown i tacan odgovor";
-                        currentQuestion= this.ChangeItem();
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
+                        currentQuestion = this.ChangeItem();
                         Reci.Text = currentQuestion.Path;
                     }
                     else if(e.Key == Key.E && e.IsDown && currentQuestion.Answer == "Good")
@@ -306,23 +341,28 @@ namespace NaucniRad.WPF
 
 
                 case 3:             //isto je za 3 i 4
-                    allAnswers.Section = 3;
+                    
+                    allAnswers3.Section = 3;
                     if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                        
                         Testni.Text = "E_KeyDown i tacan odgovor";
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers3.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
-
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         if (currentQuestion.Path.EndsWith(".png"))
                         {
@@ -338,19 +378,23 @@ namespace NaucniRad.WPF
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                       
                         Testni.Text = "I_KeyDown i tacan odgovor";
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers3.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
-
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         if (currentQuestion.Path.EndsWith(".png"))
                         {
@@ -378,23 +422,28 @@ namespace NaucniRad.WPF
                     break;
 
                 case 4:
-                    allAnswers.Section = 4;
+                    
+                    allAnswers4.Section = 4;
                     if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                       
                         Testni.Text = "E_KeyDown i tacan odgovor";
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers4.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
-
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         if (currentQuestion.Path.EndsWith(".png"))
                         {
@@ -410,19 +459,23 @@ namespace NaucniRad.WPF
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                       
                         Testni.Text = "I_KeyDown i tacan odgovor";
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers4.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
-
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         if (currentQuestion.Path.EndsWith(".png"))
                         {
@@ -451,25 +504,30 @@ namespace NaucniRad.WPF
 
                 //case 5: TODO
                 case 5:
-                    allAnswers.Section = 5;
+                    
+                    allAnswers5.Section = 5;
                     Reci.Visibility = Visibility.Hidden;
                     if (e.Key == Key.E && e.IsDown && currentQuestion.Answer == "Abled")
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;        //predji na sledece pitanje
+                              //predji na sledece pitanje
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers5.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
                         //Testni.Text = "E_KeyDown i tacan odgovor";
                         //MessageBox.Show("E_KeyDown i tacan odgovor");
-                        
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
 
@@ -477,13 +535,13 @@ namespace NaucniRad.WPF
                     else if (e.Key == Key.I && e.IsDown && currentQuestion.Answer == "Disabled")
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                       
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers5.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
@@ -491,6 +549,11 @@ namespace NaucniRad.WPF
 
                         Testni.Text = "I_KeyDown i tacan odgovor";
                         //MessageBox.Show("I_KeyDown i tacan odgovor");
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
                     }
@@ -514,23 +577,29 @@ namespace NaucniRad.WPF
                     break;
                   
                 case 6:
-                    allAnswers.Section = 6;
+                    
+                    allAnswers6.Section = 6;
                     if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                        
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers6.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
 
                         Testni.Text = "E_KeyDown i tacan odgovor";
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         if (currentQuestion.Path.EndsWith(".png"))
                         {
@@ -546,19 +615,24 @@ namespace NaucniRad.WPF
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                        
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers6.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
 
                         Testni.Text = "I_KeyDown i tacan odgovor";
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         if (currentQuestion.Path.EndsWith(".png"))
                         {
@@ -586,23 +660,29 @@ namespace NaucniRad.WPF
                     break;
 
                 case 7:
-                    allAnswers.Section = 7;
+                    
+                    allAnswers7.Section = 7;
                     if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                       
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers7.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
 
                         Testni.Text = "E_KeyDown i tacan odgovor";
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         if (currentQuestion.Path.EndsWith(".png"))
                         {
@@ -618,19 +698,24 @@ namespace NaucniRad.WPF
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
                     {
                         X.Visibility = Visibility.Hidden;
-                        i++;
+                       
                         stopwatch.Stop();
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ms, errors, currentQuestion.Answer);
-                        allAnswers.Answers.Add(fix);
+                        allAnswers7.Answers.Add(fix);
                         //allAnswers.AddAnswer(answer);
                         //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
                         stopwatch.Reset();
                         stopwatch.Start();
 
                         Testni.Text = "I_KeyDown i tacan odgovor";
+                        i++;
+                        if (i == items.Count)
+                        {
+                            this.NextSection();
+                        }
                         currentQuestion = this.ChangeItem();
                         if (currentQuestion.Path.EndsWith(".png"))
                         {
@@ -661,12 +746,13 @@ namespace NaucniRad.WPF
                     break;
             }
 
-            
+         
         }
         
 
         private Question ChangeItem()
         {
+            
             return items[i];
         }
 
@@ -677,22 +763,21 @@ namespace NaucniRad.WPF
             //this.Close();
             //expl.ShowDialog();
             //MessageBox.Show("Kraj sekcije");
+            
             if (prosledjenjaSekcija == 7)
             {
-                Testiranje testiranje = new Testiranje(allAnswers.ToString());
+                string s = allAnswers1.ToString() + "\n" + allAnswers2.ToString() + "\n" + allAnswers3.ToString() + "\n" + allAnswers4.ToString() + "\n"
+                    + allAnswers5.ToString() + "\n" + allAnswers6.ToString() + "\n" + allAnswers7.ToString();    
+                Testiranje testiranje = new Testiranje(s);
                 this.Close();
-                testiranje.Show();
+                testiranje.ShowDialog();
                 
                 Thanks thanks = new Thanks();
                 this.Close();
-                thanks.Show();
+                thanks.ShowDialog();
             }
             else
             {
-                string s = allAnswers.ToString();
-                Testiranje testiranje = new Testiranje(s);
-                this.Close();
-                testiranje.Show();
 
                 Explanation expl = new Explanation(prosledjenjaSekcija + 1);
                 this.Close();
