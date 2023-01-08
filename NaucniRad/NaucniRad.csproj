@@ -80,6 +80,9 @@
     <Compile Include="WPF\SelfAssessment.xaml.cs">
       <DependentUpon>SelfAssessment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WPF\Thanks.xaml.cs">
+      <DependentUpon>Thanks.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WPF\SelfAssessment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPF\Thanks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

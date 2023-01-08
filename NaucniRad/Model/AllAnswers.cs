@@ -19,5 +19,32 @@ namespace NaucniRad.Model
             get;
             set;
         }
+
+        public AllAnswers() 
+        {
+            Answers = new List<Answer>();
+        }
+
+        public AllAnswers(int section)
+        {
+
+            Section = section;
+            Answers= new List<Answer>();
+        }
+
+        public void AddAnswer(Answer answer)
+        {
+            Answers.Add(answer);
+        }
+
+        public override string ToString()
+        {
+            string s = "***VASI ODGOVORI: " + "Sekcija: " + this.Section.ToString() + "\n";
+            foreach(Answer answer in Answers)
+            {
+                s += answer.ToString() + "\n";
+            }
+            return s;
+        }
     }
 }
