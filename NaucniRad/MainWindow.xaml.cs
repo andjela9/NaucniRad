@@ -28,14 +28,17 @@ namespace NaucniRad
 
         private void UvodDaljeClick(object sender, RoutedEventArgs e)
         {
-            //IspitanikEntry ispitanikEntry = new IspitanikEntry(null);
-            //this.Close();
-            //ispitanikEntry.ShowDialog();
-
-            Introduction introduction = new Introduction();
+            IspitanikEntry ispitanikEntry = new IspitanikEntry();
             this.Close();
-            introduction.ShowDialog();
+            ispitanikEntry.ShowDialog();
+
+            //Introduction introduction = new Introduction();
+            //this.Close();
+            //introduction.ShowDialog();
 
         }
     }
 }
+
+
+//EIEI

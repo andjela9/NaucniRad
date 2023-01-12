@@ -50,8 +50,9 @@ namespace NaucniRad.Model
             int[] indeksi1 = new int[] { 1, 2, 3, 4, 5, 6};
             int[] indeksi2 = new int[] { 7, 8, 9, 10, 11, 12 };
             //ovde pogledati ove indekse, mnogo idu zaredom
-            List<int> Section1 = new List<int>() { 7, 10, 4, 5, 4, 3, 8, 6, 10, 12, 7, 11, 8, 9, 2, 3, 2, 1, 6, 9 };
-            foreach(int num in Section1)
+            //List<int> Section1 = new List<int>() { 7, 10, 4, 5, 4, 3, 8, 6, 10, 12, 7, 11, 8, 9, 2, 3, 2, 1, 6, 9 };
+            List<int> Section1 = new List<int>() { 7, 10, 4};
+            foreach (int num in Section1)
             {
                 section1Questions.Add(allQuestions[num-1]);
             }
@@ -60,7 +61,9 @@ namespace NaucniRad.Model
 
         public List<Question> GetSection2Questions(List<Question> allQuestions)
         {
-            List<int> Section2 = new List<int>() {14, 24, 15, 22, 23, 13, 21, 20, 23, 15, 13, 25, 17, 22, 26, 18, 17, 28, 27, 16, 19, 22, 20, 21};
+            //List<int> Section2 = new List<int>() {14, 24, 15, 22, 23, 13, 21, 20, 23, 15, 13, 25, 17, 22, 26, 18, 17, 28, 27, 16, 19, 22, 20, 21};
+            List<int> Section2 = new List<int>() {14, 24};
+
             foreach (int num in Section2)
             {
                 section2Questions.Add(allQuestions[num - 1]);
@@ -92,7 +95,7 @@ namespace NaucniRad.Model
 
         public List<Question> GetSection5Questions(List<Question> allQuestions)
         {
-            //TODO
+            //TODO  
             return null;
         }
 

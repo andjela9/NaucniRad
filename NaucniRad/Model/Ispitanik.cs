@@ -106,6 +106,11 @@ namespace NaucniRad
         }
         #endregion
 
+        public override string ToString()
+        {
+            return "Id: " + this.Id + " Age: " + this.Age + " College: " + this.College + " Gender: " + this.Gender + " Course: " + this.Gender
+                + " Disability: " + this.Disability + " Self Assessment" + this.SelfAssessment;
+        }
 
         public void OnPropertyChanged(string property)
         {

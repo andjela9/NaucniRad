@@ -26,13 +26,9 @@ namespace NaucniRad.WPF
     public partial class IspitanikEntry : Window
     {
         public List<Ispitanik> ucitanaLista = new List<Ispitanik> { };
-
-        
-
         private Ispitanik noviIspitanik = new Ispitanik();
         
-        
-        public IspitanikEntry(Ispitanik unetIspitanik)
+        public IspitanikEntry()
         {
             InitializeComponent();
             
@@ -41,10 +37,6 @@ namespace NaucniRad.WPF
             this.collegeListBox.ItemsSource = new List<String> { "FTN", "MFUNS" };
             this.genderListBox.ItemsSource = new List<String> { "Muški", "Ženski", "Ne želim da se izjasnim" };
             this.disabilityListBox.ItemsSource = new List<String> { "Da", "Ne" };
-
-
-            //ucitanaLista = new List<Ispitanik>();                  //nova lista koja ce pri pokretanju da uzme to poslednje iz xml i doda na staru listu
-
 
             try
             {
@@ -67,8 +59,6 @@ namespace NaucniRad.WPF
                 //ovde upada ako ne moze da ucita iz xml-a, tj xml je prazan
             }
 
-
-
             string t = ListToString(ucitanaLista);
             //string t = "\n***IZ XML:\n";
             //foreach (var ispitanik in ucitanaLista)
@@ -83,18 +73,6 @@ namespace NaucniRad.WPF
         {
             bool retVal = true;
 
-            //validating age input
-            //if (ageListBox.SelectedIndex == -1)
-            //{
-            //    //ageListBox.BorderBrush= Brushes.Red;
-            //    ageVal.Visibility = Visibility.Visible;
-            //    retVal = false;
-            //}
-            //else
-            //{
-            //    //ageVal.ClearValue(Border.BorderBrushProperty);
-            //    ageVal.Visibility = Visibility.Hidden;
-            //}
             //validating age input
             if (String.IsNullOrWhiteSpace(ageTxt.Text))
             {
@@ -202,6 +180,15 @@ namespace NaucniRad.WPF
             return s;
         }
 
+        public Ispitanik GetIspitanik()
+        {
+            return noviIspitanik;
+        }
+
+        public string GetIspitanikToString()
+        {
+            return noviIspitanik.ToString();
+        }
 
         private void ispitanikDaljeClick(object sender, RoutedEventArgs e)
         {
@@ -231,8 +218,8 @@ namespace NaucniRad.WPF
                 Ispitanik fix = new Ispitanik(id, noviIspitanik.Age, noviIspitanik.College, noviIspitanik.Gender, noviIspitanik.Course, 
                                                 noviIspitanik.Disability, noviIspitanik.SelfAssessment);
                 ucitanaLista.Add(fix);
-                MessageBox.Show("Poslednji unos: \n" + "\nId: " + id +  "\nGodine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College +"\nPol: " + 
-                    noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability 
+                MessageBox.Show("Poslednji unos: \n" + "\nId: " + id +  "\nGodine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College 
+                    +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability 
                     + "\nBroj elemenata u listi: " + ucitanaLista.Count.ToString() + "\n" );
 
                 //MessageBox.Show(ListToString(ispitaniciLista));
@@ -243,16 +230,20 @@ namespace NaucniRad.WPF
                 }
                 //MessageBox.Show(s);
 
-                XmlSerializer serializer = new XmlSerializer(ucitanaLista.GetType(), new XmlRootAttribute("Ispitanici"));                  //ovo je okej
+                XmlSerializer serializer = new XmlSerializer(ucitanaLista.GetType(), new XmlRootAttribute("Ispitanici"));         //ovo je okej
                 using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //okej
                 {
                     serializer.Serialize(writer, ucitanaLista);
                     writer.Close();
                 }
 
-                Introduction introduction = new Introduction();
+                //Introduction introduction = new Introduction(fix);
+                //this.Close();
+                //introduction.ShowDialog();
+
+                SelfAssessment se = new SelfAssessment(fix);
                 this.Close();
-                introduction.ShowDialog();
+                se.ShowDialog();
 
                
             }

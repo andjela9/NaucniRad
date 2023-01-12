@@ -19,9 +19,18 @@ namespace NaucniRad.WPF
     /// </summary>
     public partial class SelfAssessment : Window
     {
-        public SelfAssessment()
+        public SelfAssessment(Ispitanik ispitanik)
         {
             InitializeComponent();
+            ispitanik.SelfAssessment = 3;
+            MessageBox.Show(ispitanik.ToString());
+        }
+
+        private void selfAssesmentDalje_Click(object sender, RoutedEventArgs e)
+        {
+            Explanation expl = new Explanation(1);
+            this.Close();
+            expl.ShowDialog();
         }
     }
 }

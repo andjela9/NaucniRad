@@ -8,6 +8,18 @@ namespace NaucniRad.Model
 {
     public class Answer
     {
+        public int Id
+        {
+            get; 
+            set;
+        }
+
+        public string Section 
+        { 
+            get; 
+            set; 
+        }
+
         public double Miliseconds
         {
             get;
@@ -26,8 +38,10 @@ namespace NaucniRad.Model
 
         public Answer() { }
        
-        public Answer(double miliseconds, int numberOfErrors, string correctAnswer)
+        public Answer(int id, string section, double miliseconds, int numberOfErrors, string correctAnswer)
         {
+            Id = id;
+            Section = section;
             Miliseconds = miliseconds;
             NumberOfErrors = numberOfErrors;
             CorrectAnswer = correctAnswer;
@@ -35,7 +49,8 @@ namespace NaucniRad.Model
 
         public override string ToString()
         {
-            return "*** " + " Miliseconds: " +  this.Miliseconds.ToString() + " Number of errors: " + this.NumberOfErrors.ToString() + " Correct answer: " + this.CorrectAnswer;
+            return "*** " + "Id: " + this.Id + " Section: " + this.Section  + " Miliseconds: " +  this.Miliseconds.ToString() + " Number of errors: " 
+                + this.NumberOfErrors.ToString()  + " Correct answer: " + this.CorrectAnswer;
         }
     }
 }

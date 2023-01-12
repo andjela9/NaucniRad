@@ -32,6 +32,12 @@ namespace NaucniRad.Model
             Answers= new List<Answer>();
         }
 
+        public AllAnswers(int section, List<Answer> answers) 
+        {
+            Section = section;
+            Answers = answers;
+        }
+
         public void AddAnswer(Answer answer)
         {
             Answers.Add(answer);
