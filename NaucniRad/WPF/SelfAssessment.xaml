@@ -12,17 +12,17 @@
             <RowDefinition/>
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Koja rečenica Vas najbolje opisuje" FontSize="18" FontWeight="Bold" Margin="20"/>
+        <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Text="Koja rečenica Vas najbolje opisuje" FontSize="18" FontWeight="Bold" Margin="20, 5, 10, 0"/>
         <StackPanel Margin="20, 0, 0, 0" Grid.Row="1">
-            <RadioButton GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 25">Velika sklonost ka osobama bez invaliditeta u odnosu na osobe sa invaliditetom</RadioButton>
-            <RadioButton GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 25">Umerena sklonost ka osobama bez invaliditeta u odnosu na osobe sa invaliditetom</RadioButton>
-            <RadioButton GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 25">Blaga sklonost ka osobama bez invaliditeta u odnosu na osobe sa invaliditetom</RadioButton>
-            <RadioButton GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 25">Malo ili bez sklonosti prema jednoj od grupa</RadioButton>
-            <RadioButton GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 25">Blaga sklonost ka osobama sa invaliditetom u odnosu na osobe bez invaliditeta</RadioButton>
-            <RadioButton GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 25">Umerena sklonost ka osobama sa invaliditetom u odnosu na osobe bez invaliditeta</RadioButton>
-            <RadioButton GroupName="RadioBtnAnswer" Margin="0, 5, 0, 25">Velika sklonost ka osobama sa invaliditetom u odnosu na osobe bez invaliditeta</RadioButton>
+            <RadioButton Name="n1" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10">Velika sklonost ka osobama bez invaliditeta u odnosu na osobe sa invaliditetom</RadioButton>
+            <RadioButton Name="n2" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10">Umerena sklonost ka osobama bez invaliditeta u odnosu na osobe sa invaliditetom</RadioButton>
+            <RadioButton Name="n3" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10">Blaga sklonost ka osobama bez invaliditeta u odnosu na osobe sa invaliditetom</RadioButton>
+            <RadioButton Name="n4" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10">Malo ili bez sklonosti prema jednoj od grupa</RadioButton>
+            <RadioButton Name="n5" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10">Blaga sklonost ka osobama sa invaliditetom u odnosu na osobe bez invaliditeta</RadioButton>
+            <RadioButton Name="n6" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10">Umerena sklonost ka osobama sa invaliditetom u odnosu na osobe bez invaliditeta</RadioButton>
+            <RadioButton Name="n7" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 25" >Velika sklonost ka osobama sa invaliditetom u odnosu na osobe bez invaliditeta</RadioButton>
         </StackPanel>
-        <Button Grid.Row="2" Name="selfAssesmentDalje" HorizontalAlignment="Left" Margin="641,15,0,5" Click="selfAssesmentDalje_Click"   FontWeight="Bold" FontSize="30" Background="#7CFC00" Width="139"  >Dalje ></Button>
+        <Button Grid.Row="2" Name="selfAssesmentDalje" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="45" Margin="0, 0, 20, 10" Click="selfAssesmentDalje_Click"   FontWeight="Bold" FontSize="30" Background="#7CFC00" Width="139"  >Dalje ></Button>
 
     </Grid>
 

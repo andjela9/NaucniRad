@@ -38,26 +38,26 @@ namespace NaucniRad.WPF
             this.genderListBox.ItemsSource = new List<String> { "Muški", "Ženski", "Ne želim da se izjasnim" };
             this.disabilityListBox.ItemsSource = new List<String> { "Da", "Ne" };
 
-            try
-            {
-                XElement data = XElement.Load("../../Entries.xml");
-                ucitanaLista = (from ispitanik in data.Descendants("Ispitanik")
-                                select new Ispitanik
-                                {
-                                    Id = Int32.Parse(ispitanik.Element("Id").Value),
-                                    Age = ispitanik.Element("Age").Value,
-                                    College = ispitanik.Element("College").Value,
-                                    Gender = ispitanik.Element("Gender").Value,
-                                    Course = ispitanik.Element("Course").Value,
-                                    Disability = ispitanik.Element("Disability").Value,
-                                    SelfAssessment = int.Parse(ispitanik.Element("SelfAssessment").Value)
-                                }
-                                   ).ToList();
-            }
-            catch (Exception)
-            {
-                //ovde upada ako ne moze da ucita iz xml-a, tj xml je prazan
-            }
+            //try
+            //{
+            //    XElement data = XElement.Load("../../Entries.xml");
+            //    ucitanaLista = (from ispitanik in data.Descendants("Ispitanik")
+            //                    select new Ispitanik
+            //                    {
+            //                        Id = Int32.Parse(ispitanik.Element("Id").Value),
+            //                        Age = ispitanik.Element("Age").Value,
+            //                        College = ispitanik.Element("College").Value,
+            //                        Gender = ispitanik.Element("Gender").Value,
+            //                        Course = ispitanik.Element("Course").Value,
+            //                        Disability = ispitanik.Element("Disability").Value,
+            //                        SelfAssessment = int.Parse(ispitanik.Element("SelfAssessment").Value)
+            //                    }
+            //                       ).ToList();
+            //}
+            //catch (Exception)
+            //{
+            //    //ovde upada ako ne moze da ucita iz xml-a, tj xml je prazan
+            //}
 
             string t = ListToString(ucitanaLista);
             //string t = "\n***IZ XML:\n";
@@ -214,34 +214,34 @@ namespace NaucniRad.WPF
                 #endregion
 
                 //upis u xml
-                int id = ucitanaLista.Count() + 1;
-                Ispitanik fix = new Ispitanik(id, noviIspitanik.Age, noviIspitanik.College, noviIspitanik.Gender, noviIspitanik.Course, 
-                                                noviIspitanik.Disability, noviIspitanik.SelfAssessment);
-                ucitanaLista.Add(fix);
-                MessageBox.Show("Poslednji unos: \n" + "\nId: " + id +  "\nGodine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College 
-                    +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability 
-                    + "\nBroj elemenata u listi: " + ucitanaLista.Count.ToString() + "\n" );
+                //int id = ucitanaLista.Count() + 1;
+                //Ispitanik fix = new Ispitanik(id, noviIspitanik.Age, noviIspitanik.College, noviIspitanik.Gender, noviIspitanik.Course, 
+                //                                noviIspitanik.Disability, noviIspitanik.SelfAssessment);
+                //ucitanaLista.Add(fix);
+                //MessageBox.Show("Poslednji unos: \n" + "\nId: " + id +  "\nGodine: " + noviIspitanik.Age + "\nFakultet: " + noviIspitanik.College 
+                //    +"\nPol: " + noviIspitanik.Gender + "\nSmer: " + noviIspitanik.Course + "\nOsoba sa invaliditetom: " + noviIspitanik.Disability 
+                //    + "\nBroj elemenata u listi: " + ucitanaLista.Count.ToString() + "\n" );
 
-                //MessageBox.Show(ListToString(ispitaniciLista));
-                string s = "Lista iz programa\n";
-                foreach(var ispitanik in ucitanaLista)
-                {
-                    s+= ispitanik.Age + "\n";
-                }
-                //MessageBox.Show(s);
+                ////MessageBox.Show(ListToString(ispitaniciLista));
+                //string s = "Lista iz programa\n";
+                //foreach(var ispitanik in ucitanaLista)
+                //{
+                //    s+= ispitanik.Age + "\n";
+                //}
+                ////MessageBox.Show(s);
 
-                XmlSerializer serializer = new XmlSerializer(ucitanaLista.GetType(), new XmlRootAttribute("Ispitanici"));         //ovo je okej
-                using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //okej
-                {
-                    serializer.Serialize(writer, ucitanaLista);
-                    writer.Close();
-                }
+                //XmlSerializer serializer = new XmlSerializer(ucitanaLista.GetType(), new XmlRootAttribute("Ispitanici"));         //ovo je okej
+                //using (TextWriter writer = new StreamWriter("../../Entries.xml"))                //okej
+                //{
+                //    serializer.Serialize(writer, ucitanaLista);
+                //    writer.Close();
+                //}
 
                 //Introduction introduction = new Introduction(fix);
                 //this.Close();
                 //introduction.ShowDialog();
 
-                SelfAssessment se = new SelfAssessment(fix);
+                SelfAssessment se = new SelfAssessment(noviIspitanik);
                 this.Close();
                 se.ShowDialog();
 
