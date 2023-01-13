@@ -22,10 +22,12 @@ namespace NaucniRad.WPF
 
         //ucitati sekciju
         int prosledjenaSekcija;
-        public Explanation(int sekcija)
+        int ispitanikId;
+        public Explanation(int sekcija, int id)
         {
             InitializeComponent();
             prosledjenaSekcija = sekcija;
+            ispitanikId = id;
             //MessageBox.Show(prosledjenaSekcija.ToString());
             switch (sekcija)
             {
@@ -83,7 +85,7 @@ namespace NaucniRad.WPF
 
         private void OpenQuestionWindow()
         {
-            QuestionWindow questionWindow = new QuestionWindow(prosledjenaSekcija);
+            QuestionWindow questionWindow = new QuestionWindow(prosledjenaSekcija, ispitanikId);
             this.Close();
             questionWindow.ShowDialog();
         }

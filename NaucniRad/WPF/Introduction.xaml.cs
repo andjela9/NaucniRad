@@ -19,14 +19,19 @@ namespace NaucniRad.WPF
     /// </summary>
     public partial class Introduction : Window
     {
-        public Introduction()
+        int id;
+        public Introduction(int ispId)
         {
             InitializeComponent();
+            MessageBox.Show("Prosledjen ID: " + ispId.ToString());
+            id = ispId;
+            MessageBox.Show("Prosledjen ID: " + id.ToString());
+
         }
 
         private void explanationDalje_Click(object sender, RoutedEventArgs e)
         {
-            Explanation expl = new Explanation(1);
+            Explanation expl = new Explanation(1, id);
             this.Close();
             expl.ShowDialog();
         }

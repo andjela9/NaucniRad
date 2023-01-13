@@ -40,16 +40,18 @@ namespace NaucniRad.WPF
         AllAnswers allAnswers6 = new AllAnswers();
         AllAnswers allAnswers7 = new AllAnswers();
         List<AllAnswers> allAnswersLista = new List<AllAnswers>();
+        int ispitanikId;
         
         int errors = 0;
         Question currentQuestion = new Question();
         
         
-        public QuestionWindow(int sekcija)
+        public QuestionWindow(int sekcija, int id)
         {
             InitializeComponent();
             Dugme.Focus();
             prosledjenjaSekcija = sekcija;
+            ispitanikId = id;
 
             switch (sekcija)
             {
@@ -204,7 +206,7 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija1", ms, errors, currentQuestion.Answer);
+                        Answer fix = new Answer(ispitanikId, "sekcija1", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
                         MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
@@ -234,7 +236,7 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija1", ms, errors, currentQuestion.Answer);
+                        Answer fix = new Answer(ispitanikId, "sekcija1", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
                         MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());       //ovo samo zapisati u fajl
@@ -876,7 +878,7 @@ namespace NaucniRad.WPF
                 //}
                 #endregion
 
-                Explanation expl = new Explanation(prosledjenjaSekcija + 1);
+                Explanation expl = new Explanation(prosledjenjaSekcija + 1, ispitanikId);
                 this.Close();
                 expl.ShowDialog();
             }

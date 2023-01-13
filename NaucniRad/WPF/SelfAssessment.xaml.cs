@@ -118,9 +118,12 @@ namespace NaucniRad.WPF
                     writer.Close();
                 }
 
-                Explanation expl = new Explanation(1);
+                //Explanation expl = new Explanation(1, ispitanik.Id);
+                //this.Close();
+                //expl.ShowDialog();
+                Introduction ind = new Introduction(id);
                 this.Close();
-                expl.ShowDialog();
+                ind.ShowDialog();
             }
             else
             {
