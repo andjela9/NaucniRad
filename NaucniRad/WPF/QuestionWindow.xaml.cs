@@ -32,14 +32,6 @@ namespace NaucniRad.WPF
         Stopwatch stopwatch = new Stopwatch();
         Answer answer = new Answer();
 
-       // AllAnswers allAnswers1 = new AllAnswers();
-       // AllAnswers allAnswers2 = new AllAnswers();
-        AllAnswers allAnswers3 = new AllAnswers();
-        AllAnswers allAnswers4 = new AllAnswers();
-        //AllAnswers allAnswers5 = new AllAnswers();
-        AllAnswers allAnswers6 = new AllAnswers();
-        AllAnswers allAnswers7 = new AllAnswers();
-        List<AllAnswers> allAnswersLista = new List<AllAnswers>();
         int ispitanikId;
         
         int errors = 0;
@@ -365,8 +357,7 @@ namespace NaucniRad.WPF
 
 
                 case 3:             //isto je za 3 i 4
-                    
-                    allAnswers3.Section = 3;
+                   
                     if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
                     {
                         X.Visibility = Visibility.Hidden;
@@ -376,10 +367,10 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija3", ms, errors, currentQuestion.Answer);
-                        allAnswers3.Answers.Add(fix);
-                        //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        Answer fix = new Answer(ispitanikId, "sekcija3", ms, errors, currentQuestion.Answer);
+
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
                         errors = 0;
@@ -390,17 +381,21 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        if (currentQuestion.Path.EndsWith(".png"))
-                        {
-                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                            Reci.Text = "";
-                        }
                         else
                         {
-                            Reci.Text = currentQuestion.Path;
-                            Slika.Source = null;
+                            currentQuestion = this.ChangeItem();
+                            if (currentQuestion.Path.EndsWith(".png"))
+                            {
+                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                Reci.Text = "";
+                            }
+                            else
+                            {
+                                Reci.Text = currentQuestion.Path;
+                                Slika.Source = null;
+                            }
                         }
+                        
                     }
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
                     {
@@ -411,10 +406,11 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija3", ms, errors, currentQuestion.Answer);
-                        allAnswers3.Answers.Add(fix);
+                        Answer fix = new Answer(ispitanikId, "sekcija3", ms, errors, currentQuestion.Answer);
+                       
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
                         errors = 0;
@@ -425,17 +421,21 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        if (currentQuestion.Path.EndsWith(".png"))
-                        {
-                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                            Reci.Text = "";
-                        }
                         else
                         {
-                            Reci.Text = currentQuestion.Path;
-                            Slika.Source = null;
+                            currentQuestion = this.ChangeItem();
+                            if (currentQuestion.Path.EndsWith(".png"))
+                            {
+                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                Reci.Text = "";
+                            }
+                            else
+                            {
+                                Reci.Text = currentQuestion.Path;
+                                Slika.Source = null;
+                            }
                         }
+                        
                     }
                     else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
                     {
@@ -456,8 +456,6 @@ namespace NaucniRad.WPF
                     break;
 
                 case 4:
-                    
-                    allAnswers4.Section = 4;
                     if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
                     {
                         X.Visibility = Visibility.Hidden;
@@ -467,10 +465,11 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija4", ms, errors, currentQuestion.Answer);
-                        allAnswers4.Answers.Add(fix);
+                        Answer fix = new Answer(ispitanikId, "sekcija4", ms, errors, currentQuestion.Answer);
+                        
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
                         errors = 0;
@@ -481,16 +480,19 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        if (currentQuestion.Path.EndsWith(".png"))
-                        {
-                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                            Reci.Text = "";
-                        }
                         else
                         {
-                            Reci.Text = currentQuestion.Path;
-                            Slika.Source = null;
+                            currentQuestion = this.ChangeItem();
+                            if (currentQuestion.Path.EndsWith(".png"))
+                            {
+                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                Reci.Text = "";
+                            }
+                            else
+                            {
+                                Reci.Text = currentQuestion.Path;
+                                Slika.Source = null;
+                            }
                         }
                     }
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
@@ -502,10 +504,10 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija4", ms, errors, currentQuestion.Answer);
-                        allAnswers4.Answers.Add(fix);
+                        Answer fix = new Answer(ispitanikId, "sekcija4", ms, errors, currentQuestion.Answer);
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
 
@@ -516,17 +518,21 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        if (currentQuestion.Path.EndsWith(".png"))
-                        {
-                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                            Reci.Text = "";
-                        }
                         else
                         {
-                            Reci.Text = currentQuestion.Path;
-                            Slika.Source = null;
+                            currentQuestion = this.ChangeItem();
+                            if (currentQuestion.Path.EndsWith(".png"))
+                            {
+                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                Reci.Text = "";
+                            }
+                            else
+                            {
+                                Reci.Text = currentQuestion.Path;
+                                Slika.Source = null;
+                            }
                         }
+                        
                     }
                     else if(e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
                     {
@@ -549,7 +555,6 @@ namespace NaucniRad.WPF
                 //case 5: TODO
                 case 5:
                     
-                    
                     Reci.Visibility = Visibility.Hidden;
                     if (e.Key == Key.E && e.IsDown && currentQuestion.Answer == "Abled")
                     {
@@ -559,10 +564,11 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija5", ms, errors, currentQuestion.Answer);
+                        Answer fix = new Answer(ispitanikId, "sekcija5", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        
                         stopwatch.Reset();
                         stopwatch.Start();
                         //Testni.Text = "E_KeyDown i tacan odgovor";
@@ -575,8 +581,11 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                        else
+                        {
+                            currentQuestion = this.ChangeItem();
+                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                        }
 
                     }
                     else if (e.Key == Key.I && e.IsDown && currentQuestion.Answer == "Disabled")
@@ -587,10 +596,11 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija5", ms, errors, currentQuestion.Answer);
+                        Answer fix = new Answer(ispitanikId, "sekcija5", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        
                         stopwatch.Reset();
                         stopwatch.Start();
 
@@ -603,8 +613,12 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                        else
+                        {
+                            currentQuestion = this.ChangeItem();
+                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+
+                        }
                     }
                     else if (e.Key == Key.E && e.IsDown && currentQuestion.Answer == "Disabled")
                     {
@@ -632,7 +646,7 @@ namespace NaucniRad.WPF
                 case 6:
                     //
                     
-                    allAnswers6.Section = 6;
+                    
                     if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
                     {
                         X.Visibility = Visibility.Hidden;
@@ -641,10 +655,11 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija6", ms, errors, currentQuestion.Answer);
-                        allAnswers6.Answers.Add(fix);
+                        Answer fix = new Answer(ispitanikId, "sekcija6", ms, errors, currentQuestion.Answer);
+                       
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
 
@@ -656,16 +671,19 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        if (currentQuestion.Path.EndsWith(".png"))
-                        {
-                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                            Reci.Text = "";
-                        }
                         else
                         {
-                            Reci.Text = currentQuestion.Path;
-                            Slika.Source = null;
+                            currentQuestion = this.ChangeItem();
+                            if (currentQuestion.Path.EndsWith(".png"))
+                            {
+                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                Reci.Text = "";
+                            }
+                            else
+                            {
+                                Reci.Text = currentQuestion.Path;
+                                Slika.Source = null;
+                            }
                         }
                     }
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
@@ -676,10 +694,10 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija6", ms, errors, currentQuestion.Answer);
-                        allAnswers6.Answers.Add(fix);
+                        Answer fix = new Answer(ispitanikId, "sekcija6", ms, errors, currentQuestion.Answer);
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
 
@@ -691,17 +709,21 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        if (currentQuestion.Path.EndsWith(".png"))
-                        {
-                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                            Reci.Text = "";
-                        }
                         else
                         {
-                            Reci.Text = currentQuestion.Path;
-                            Slika.Source = null;
+                            currentQuestion = this.ChangeItem();
+                            if (currentQuestion.Path.EndsWith(".png"))
+                            {
+                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                Reci.Text = "";
+                            }
+                            else
+                            {
+                                Reci.Text = currentQuestion.Path;
+                                Slika.Source = null;
+                            }
                         }
+                        
                     }
                     else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
                     {
@@ -723,7 +745,7 @@ namespace NaucniRad.WPF
 
                 case 7:
                     
-                    allAnswers7.Section = 7;
+                   
                     if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
                     {
                         X.Visibility = Visibility.Hidden;
@@ -732,10 +754,11 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija7", ms, errors, currentQuestion.Answer);
-                        allAnswers7.Answers.Add(fix);
+                        Answer fix = new Answer(ispitanikId, "sekcija7", ms, errors, currentQuestion.Answer);
+                        
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
 
@@ -747,17 +770,21 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        if (currentQuestion.Path.EndsWith(".png"))
-                        {
-                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                            Reci.Text = "";
-                        }
                         else
                         {
-                            Reci.Text = currentQuestion.Path;
-                            Slika.Source = null;
+                            currentQuestion = this.ChangeItem();
+                            if (currentQuestion.Path.EndsWith(".png"))
+                            {
+                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                Reci.Text = "";
+                            }
+                            else
+                            {
+                                Reci.Text = currentQuestion.Path;
+                                Slika.Source = null;
+                            }
                         }
+                        
                     }
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
                     {
@@ -767,10 +794,10 @@ namespace NaucniRad.WPF
                         double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
                         answer.Miliseconds = ms;
                         answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(1, "sekcija7", ms, errors, currentQuestion.Answer);
-                        allAnswers7.Answers.Add(fix);
+                        Answer fix = new Answer(ispitanikId, "sekcija7", ms, errors, currentQuestion.Answer);
                         //allAnswers.AddAnswer(answer);
-                        //MessageBox.Show("Ms: " + ms.ToString() + answer.ToString());
+                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
 
@@ -782,17 +809,21 @@ namespace NaucniRad.WPF
                         {
                             this.NextSection();
                         }
-                        currentQuestion = this.ChangeItem();
-                        if (currentQuestion.Path.EndsWith(".png"))
-                        {
-                            Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                            Reci.Text = "";
-                        }
                         else
                         {
-                            Reci.Text = currentQuestion.Path;
-                            Slika.Source = null;
+                            currentQuestion = this.ChangeItem();
+                            if (currentQuestion.Path.EndsWith(".png"))
+                            {
+                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                Reci.Text = "";
+                            }
+                            else
+                            {
+                                Reci.Text = currentQuestion.Path;
+                                Slika.Source = null;
+                            }
                         }
+                        
                     }
                     else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
                     {
@@ -849,14 +880,14 @@ namespace NaucniRad.WPF
                 //allAnswersLista.Add(fix7);
                 #endregion 
 
-                Testiranje testiranje = new Testiranje(allAnswers3.ToString() + "\n" + allAnswers4.ToString() + "\n" 
-                                                        + allAnswers6.ToString() + "\n" + allAnswers7.ToString());
-                this.Close();
-                testiranje.ShowDialog();
-
-                //Thanks thanks = new Thanks();
+                //Testiranje testiranje = new Testiranje(allAnswers3.ToString() + "\n" + allAnswers4.ToString() + "\n" 
+                //                                        + allAnswers6.ToString() + "\n" + allAnswers7.ToString());
                 //this.Close();
-                //thanks.ShowDialog();
+                //testiranje.ShowDialog();
+
+                Thanks thanks = new Thanks();
+                this.Close();
+                thanks.ShowDialog();
             }
             else
             {

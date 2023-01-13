@@ -1008,4 +1008,49 @@
     <Disability>Da</Disability>
     <SelfAssessment>6</SelfAssessment>
   </Ispitanik>
+  <Ispitanik>
+    <Id>113</Id>
+    <Age>3</Age>
+    <College>FTN</College>
+    <Gender>Ženski</Gender>
+    <Course>gfs</Course>
+    <Disability>Da</Disability>
+    <SelfAssessment>7</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>114</Id>
+    <Age>34</Age>
+    <College>FTN</College>
+    <Gender>Ženski</Gender>
+    <Course>fbs</Course>
+    <Disability>Da</Disability>
+    <SelfAssessment>6</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>115</Id>
+    <Age>45</Age>
+    <College>FTN</College>
+    <Gender>Ženski</Gender>
+    <Course>vfsa</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>5</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>116</Id>
+    <Age>12</Age>
+    <College>FTN</College>
+    <Gender>Ženski</Gender>
+    <Course>fwa</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>5</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>117</Id>
+    <Age>13</Age>
+    <College>MFUNS</College>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>hs</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>4</SelfAssessment>
+  </Ispitanik>
 </Ispitanici>
