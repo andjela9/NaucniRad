@@ -48,8 +48,8 @@ namespace NaucniRad.WPF
             switch (sekcija)
             {
                 case 1:
-                    kategorijaLevoTxt.Text = "Osoba SA invaliditetom";
-                    kategorijaDesnoTxt.Text = "Osoba BEZ invaliditeta";
+                    kategorijaLevoTxt.Text = "Osoba sa invaliditetom";
+                    kategorijaDesnoTxt.Text = "Osoba tipične populacije";
                     foreach(Question q in questionOrder.section1Questions)
                     {
                         items.Add(q);
@@ -64,24 +64,40 @@ namespace NaucniRad.WPF
                     }
                     break;
                 case 3:
-                    kategorijaLevoTxt.Text = "LOŠE\nOsoba SA invaliditetom";
-                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba BEZ invaliditeta";
+                    if(ispitanikId % 2 == 0)
+                    {
+                        kategorijaLevoTxt.Text = "LOŠE\nOsoba sa invaliditetom";
+                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba tipične populacije";
+                    }
+                    else
+                    {
+                        kategorijaLevoTxt.Text = "LOŠE\nOsoba tipične populacije";
+                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba sa invaliditetom";
+                    }
                     foreach (Question q in questionOrder.section3Questions)
                     {
                         items.Add(q);
                     }
                     break;
                 case 4:
-                    kategorijaLevoTxt.Text = "LOŠE\nOsoba SA invaliditetom";
-                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba BEZ invaliditeta";
+                    if (ispitanikId % 2 == 0)
+                    {
+                        kategorijaLevoTxt.Text = "LOŠE\nOsoba sa invaliditetom";
+                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba tipične populacije";
+                    }
+                    else
+                    {
+                        kategorijaLevoTxt.Text = "LOŠE\nOsoba tipične populacije";
+                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba sa invaliditetom";
+                    }
                     foreach (Question q in questionOrder.section4Questions)
                     {
                         items.Add(q);
                     }
                     break;
                 case 5:
-                    kategorijaLevoTxt.Text = "Osoba BEZ invaliditeta";
-                    kategorijaDesnoTxt.Text = "Osoba SA invaliditetom";
+                    kategorijaLevoTxt.Text = "Osoba tipične populacije";
+                    kategorijaDesnoTxt.Text = "Osoba sa invaliditetom";
                     //TODO: ucitati items za sekciju 5
                     foreach (Question q in questionOrder.section1Questions)
                     {
@@ -89,16 +105,32 @@ namespace NaucniRad.WPF
                     }
                     break;
                 case 6:
-                    kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
-                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
+                    if(ispitanikId %2 == 0)
+                    {
+                        kategorijaLevoTxt.Text = "LOŠE\nOsoba tipične populacije";
+                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba sa invaliditetom";
+                    }
+                    else
+                    {
+                        kategorijaLevoTxt.Text = "LOŠE\nOsoba sa invaliditetom";
+                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba tipične populacije";
+                    }
                     foreach (Question q in questionOrder.section6Questions)
                     {
                         items.Add(q);
                     }
                     break;
                 case 7:
-                    kategorijaLevoTxt.Text = "LOŠE\nOsoba BEZ invaliditeta";
-                    kategorijaDesnoTxt.Text = "DOBRO\nOsoba SA invaliditetom";
+                    if (ispitanikId % 2 == 0)
+                    {
+                        kategorijaLevoTxt.Text = "LOŠE\nOsoba tipične populacije";
+                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba sa invaliditetom";
+                    }
+                    else
+                    {
+                        kategorijaLevoTxt.Text = "LOŠE\nOsoba sa invaliditetom";
+                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba tipične populacije";
+                    }
                     foreach (Question q in questionOrder.section7Questions)
                     {
                         items.Add(q);
@@ -201,8 +233,8 @@ namespace NaucniRad.WPF
                         Answer fix = new Answer(ispitanikId, "sekcija1", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
-                        WriteToCsv(fix);
+                        //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        //WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
                         //Testni.Text = "E_KeyDown i tacan odgovor";
@@ -231,8 +263,8 @@ namespace NaucniRad.WPF
                         Answer fix = new Answer(ispitanikId, "sekcija1", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());       //ovo samo zapisati u fajl
-                        WriteToCsv(fix);
+                        //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());       //ovo samo zapisati u fajl
+                        //WriteToCsv(fix);
 
 
                         stopwatch.Reset();
@@ -357,204 +389,406 @@ namespace NaucniRad.WPF
 
 
                 case 3:             //isto je za 3 i 4
-                   
-                    if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
+
+                    if (ispitanikId % 2 == 0)
                     {
-                        X.Visibility = Visibility.Hidden;
-                        
-                        Testni.Text = "E_KeyDown i tacan odgovor";
-                        stopwatch.Stop();
-                        double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
-                        answer.Miliseconds = ms;
-                        answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(ispitanikId, "sekcija3", ms, errors, currentQuestion.Answer);
-
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
-                        WriteToCsv(fix);
-                        stopwatch.Reset();
-                        stopwatch.Start();
-                        errors = 0;
-                        answer.NumberOfErrors = 0;
-
-                        i++;
-                        if (i == items.Count)
+                        if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
                         {
-                            this.NextSection();
-                        }
-                        else
-                        {
-                            currentQuestion = this.ChangeItem();
-                            if (currentQuestion.Path.EndsWith(".png"))
+                            X.Visibility = Visibility.Hidden;
+
+                            Testni.Text = "E_KeyDown i tacan odgovor";
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija3", ms, errors, currentQuestion.Answer);
+
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+
+                            i++;
+                            if (i == items.Count)
                             {
-                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                                Reci.Text = "";
+                                this.NextSection();
                             }
                             else
                             {
-                                Reci.Text = currentQuestion.Path;
-                                Slika.Source = null;
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
                             }
-                        }
-                        
-                    }
-                    else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
-                    {
-                        X.Visibility = Visibility.Hidden;
-                       
-                        Testni.Text = "I_KeyDown i tacan odgovor";
-                        stopwatch.Stop();
-                        double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
-                        answer.Miliseconds = ms;
-                        answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(ispitanikId, "sekcija3", ms, errors, currentQuestion.Answer);
-                       
-                        //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
-                        WriteToCsv(fix);
-                        stopwatch.Reset();
-                        stopwatch.Start();
-                        errors = 0;
-                        answer.NumberOfErrors = 0;
 
-                        i++;
-                        if (i == items.Count)
-                        {
-                            this.NextSection();
                         }
-                        else
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
                         {
-                            currentQuestion = this.ChangeItem();
-                            if (currentQuestion.Path.EndsWith(".png"))
+                            X.Visibility = Visibility.Hidden;
+
+                            Testni.Text = "I_KeyDown i tacan odgovor";
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija3", ms, errors, currentQuestion.Answer);
+
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+
+                            i++;
+                            if (i == items.Count)
                             {
-                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                                Reci.Text = "";
+                                this.NextSection();
                             }
                             else
                             {
-                                Reci.Text = currentQuestion.Path;
-                                Slika.Source = null;
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
                             }
+
                         }
-                        
+                        else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        } 
                     }
-                    else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
+
+                    else
                     {
-                        errors++;
-                        answer.NumberOfErrors = errors;
-                        X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
-                    }
-                    else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
-                    {
-                        errors++;
-                        answer.NumberOfErrors = errors;
-                        X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
+
+                            Testni.Text = "E_KeyDown i tacan odgovor";
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija3", ms, errors, currentQuestion.Answer);
+
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+
+                            i++;
+                            if (i == items.Count)
+                            {
+                                this.NextSection();
+                            }
+                            else
+                            {
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
+                            }
+
+                        }
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
+
+                            Testni.Text = "I_KeyDown i tacan odgovor";
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija3", ms, errors, currentQuestion.Answer);
+
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+
+                            i++;
+                            if (i == items.Count)
+                            {
+                                this.NextSection();
+                            }
+                            else
+                            {
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
+                            }
+
+                        }
+                        else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
+
                     }
                     break;
 
                 case 4:
-                    if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
+                    if (ispitanikId %2 == 0)
                     {
-                        X.Visibility = Visibility.Hidden;
-                       
-                        Testni.Text = "E_KeyDown i tacan odgovor";
-                        stopwatch.Stop();
-                        double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
-                        answer.Miliseconds = ms;
-                        answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(ispitanikId, "sekcija4", ms, errors, currentQuestion.Answer);
-                        
-                        //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
-                        WriteToCsv(fix);
-                        stopwatch.Reset();
-                        stopwatch.Start();
-                        errors = 0;
-                        answer.NumberOfErrors = 0;
+                        if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
 
-                        i++;
-                        if (i == items.Count)
-                        {
-                            this.NextSection();
-                        }
-                        else
-                        {
-                            currentQuestion = this.ChangeItem();
-                            if (currentQuestion.Path.EndsWith(".png"))
+                            Testni.Text = "E_KeyDown i tacan odgovor";
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija4", ms, errors, currentQuestion.Answer);
+
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+
+                            i++;
+                            if (i == items.Count)
                             {
-                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                                Reci.Text = "";
+                                this.NextSection();
                             }
                             else
                             {
-                                Reci.Text = currentQuestion.Path;
-                                Slika.Source = null;
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
                             }
                         }
-                    }
-                    else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
-                    {
-                        X.Visibility = Visibility.Hidden;
-                       
-                        Testni.Text = "I_KeyDown i tacan odgovor";
-                        stopwatch.Stop();
-                        double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
-                        answer.Miliseconds = ms;
-                        answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(ispitanikId, "sekcija4", ms, errors, currentQuestion.Answer);
-                        //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
-                        WriteToCsv(fix);
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
 
-                        errors = 0;
-                        answer.NumberOfErrors = 0;
-                        i++;
-                        if (i == items.Count)
-                        {
-                            this.NextSection();
-                        }
-                        else
-                        {
-                            currentQuestion = this.ChangeItem();
-                            if (currentQuestion.Path.EndsWith(".png"))
+                            Testni.Text = "I_KeyDown i tacan odgovor";
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija4", ms, errors, currentQuestion.Answer);
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+                            i++;
+                            if (i == items.Count)
                             {
-                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                                Reci.Text = "";
+                                this.NextSection();
                             }
                             else
                             {
-                                Reci.Text = currentQuestion.Path;
-                                Slika.Source = null;
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
+                            }
+
+                        }
+                        else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        } 
+                    }
+                    else
+                    {
+                        if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
+
+                            Testni.Text = "E_KeyDown i tacan odgovor";
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija4", ms, errors, currentQuestion.Answer);
+
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+
+                            i++;
+                            if (i == items.Count)
+                            {
+                                this.NextSection();
+                            }
+                            else
+                            {
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
                             }
                         }
-                        
-                    }
-                    else if(e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
-                    {
-                        errors++;
-                        answer.NumberOfErrors = errors;
-                        X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
-                    }
-                    else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
-                    {
-                        errors++;
-                        answer.NumberOfErrors = errors;
-                        X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
+
+                            Testni.Text = "I_KeyDown i tacan odgovor";
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija4", ms, errors, currentQuestion.Answer);
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+                            i++;
+                            if (i == items.Count)
+                            {
+                                this.NextSection();
+                            }
+                            else
+                            {
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
+                            }
+
+                        }
+                        else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
                     }
                     break;
 
-                //case 5: TODO
+                
                 case 5:
-                    
                     Reci.Visibility = Visibility.Hidden;
                     if (e.Key == Key.E && e.IsDown && currentQuestion.Answer == "Abled")
                     {
@@ -567,7 +801,7 @@ namespace NaucniRad.WPF
                         Answer fix = new Answer(ispitanikId, "sekcija5", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
                         
                         stopwatch.Reset();
                         stopwatch.Start();
@@ -599,7 +833,7 @@ namespace NaucniRad.WPF
                         Answer fix = new Answer(ispitanikId, "sekcija5", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
                         
                         stopwatch.Reset();
                         stopwatch.Start();
@@ -644,102 +878,199 @@ namespace NaucniRad.WPF
                     break;
                   
                 case 6:
-                    //
-                    
-                    
-                    if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
+                    if (ispitanikId %2 == 0)
                     {
-                        X.Visibility = Visibility.Hidden;
-                        
-                        stopwatch.Stop();
-                        double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
-                        answer.Miliseconds = ms;
-                        answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(ispitanikId, "sekcija6", ms, errors, currentQuestion.Answer);
-                       
-                        //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
-                        WriteToCsv(fix);
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
 
-                        Testni.Text = "E_KeyDown i tacan odgovor";
-                        errors = 0;
-                        answer.NumberOfErrors = 0;
-                        i++;
-                        if (i == items.Count)
-                        {
-                            this.NextSection();
-                        }
-                        else
-                        {
-                            currentQuestion = this.ChangeItem();
-                            if (currentQuestion.Path.EndsWith(".png"))
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija6", ms, errors, currentQuestion.Answer);
+
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+
+                            Testni.Text = "E_KeyDown i tacan odgovor";
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+                            i++;
+                            if (i == items.Count)
                             {
-                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                                Reci.Text = "";
+                                this.NextSection();
                             }
                             else
                             {
-                                Reci.Text = currentQuestion.Path;
-                                Slika.Source = null;
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
                             }
                         }
-                    }
-                    else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
-                    {
-                        X.Visibility = Visibility.Hidden;
-                        
-                        stopwatch.Stop();
-                        double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
-                        answer.Miliseconds = ms;
-                        answer.CorrectAnswer = currentQuestion.Answer;
-                        Answer fix = new Answer(ispitanikId, "sekcija6", ms, errors, currentQuestion.Answer);
-                        //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
-                        WriteToCsv(fix);
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
 
-                        Testni.Text = "I_KeyDown i tacan odgovor";
-                        errors = 0;
-                        answer.NumberOfErrors = 0;
-                        i++;
-                        if (i == items.Count)
-                        {
-                            this.NextSection();
-                        }
-                        else
-                        {
-                            currentQuestion = this.ChangeItem();
-                            if (currentQuestion.Path.EndsWith(".png"))
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija6", ms, errors, currentQuestion.Answer);
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+
+                            Testni.Text = "I_KeyDown i tacan odgovor";
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+                            i++;
+                            if (i == items.Count)
                             {
-                                Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
-                                Reci.Text = "";
+                                this.NextSection();
                             }
                             else
                             {
-                                Reci.Text = currentQuestion.Path;
-                                Slika.Source = null;
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
+                            }
+
+                        }
+                        else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        } 
+                    }
+                    else
+                    {
+                        if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
+
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija6", ms, errors, currentQuestion.Answer);
+
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+
+                            Testni.Text = "E_KeyDown i tacan odgovor";
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+                            i++;
+                            if (i == items.Count)
+                            {
+                                this.NextSection();
+                            }
+                            else
+                            {
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
                             }
                         }
-                        
-                    }
-                    else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Disabled"))
-                    {
-                        errors++;
-                        answer.NumberOfErrors = errors;
-                        X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
-                    }
-                    else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
-                    {
-                        errors++;
-                        answer.NumberOfErrors = errors;
-                        X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
+                        {
+                            X.Visibility = Visibility.Hidden;
+
+                            stopwatch.Stop();
+                            double ms = stopwatch.ElapsedMilliseconds;          //ovako ce se dobiti samo koliko treba da se stisne taster, 350ak ticks
+                            answer.Miliseconds = ms;
+                            answer.CorrectAnswer = currentQuestion.Answer;
+                            Answer fix = new Answer(ispitanikId, "sekcija6", ms, errors, currentQuestion.Answer);
+                            //allAnswers.AddAnswer(answer);
+                            //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                            WriteToCsv(fix);
+                            stopwatch.Reset();
+                            stopwatch.Start();
+
+                            Testni.Text = "I_KeyDown i tacan odgovor";
+                            errors = 0;
+                            answer.NumberOfErrors = 0;
+                            i++;
+                            if (i == items.Count)
+                            {
+                                this.NextSection();
+                            }
+                            else
+                            {
+                                currentQuestion = this.ChangeItem();
+                                if (currentQuestion.Path.EndsWith(".png"))
+                                {
+                                    Slika.Source = new BitmapImage(new Uri(currentQuestion.Path, UriKind.Relative));
+                                    Reci.Text = "";
+                                }
+                                else
+                                {
+                                    Reci.Text = currentQuestion.Path;
+                                    Slika.Source = null;
+                                }
+                            }
+
+                        }
+                        else if (e.Key == Key.E && e.IsDown && (currentQuestion.Answer == "Good" || currentQuestion.Answer == "Abled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
+                        else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
+                        {
+                            errors++;
+                            answer.NumberOfErrors = errors;
+                            X.Visibility = Visibility.Visible;
+                            stopwatch.Reset();
+                            stopwatch.Start();
+                        }
                     }
                     break;
 
@@ -757,7 +1088,7 @@ namespace NaucniRad.WPF
                         Answer fix = new Answer(ispitanikId, "sekcija7", ms, errors, currentQuestion.Answer);
                         
                         //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
                         WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();
@@ -796,7 +1127,7 @@ namespace NaucniRad.WPF
                         answer.CorrectAnswer = currentQuestion.Answer;
                         Answer fix = new Answer(ispitanikId, "sekcija7", ms, errors, currentQuestion.Answer);
                         //allAnswers.AddAnswer(answer);
-                        MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
+                        //MessageBox.Show("Ms: " + ms.ToString() + fix.ToString());
                         WriteToCsv(fix);
                         stopwatch.Reset();
                         stopwatch.Start();

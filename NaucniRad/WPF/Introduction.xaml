@@ -22,8 +22,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" VerticalAlignment="Top" TextAlignment="Center" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" TextWrapping="Wrap"><Run Text="U ovom testu, koristićete tastere ‘E’ i ‘I’ na tastaturi kako biste kategorizovali slike/reči što brže možete. "/><LineBreak/><Run Text="Ovo su četiri grupe i stavke koji pripadaju svakoj:"/></TextBlock>
-        <Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,0,10,0" Fill="LightGray"/>
+        <Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="5,0,5,0" Fill="LightGray"/>
         <TextBlock Grid.Row="1" Grid.Column="0" Margin="20,0,0,0" Text="Kategorija" TextAlignment="Left" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+        <Line Stroke="Black" StrokeThickness="4" />
         <TextBlock Grid.Row="1" Grid.Column="1"  Margin="20,0,0,0" Text="Stavke" TextAlignment="Center" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Margin="20" Text="Dobro" TextAlignment="Left" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
         <TextBlock Grid.Row="2" Grid.Column="1" Margin="30, 0, 30, 0" FontSize="18"  TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"><Run Text="Trijumf,   slavlje,   fantastično,   uzbuđenost, "/><LineBreak/><Run Text="spektakularno,   srećno,   smejanje,   zadovoljno"/></TextBlock>
@@ -48,9 +49,21 @@
             <Image Source="/Pictures90/icons8-walking-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
             <Image Source="/Pictures90/icons8-weightlifting-90.png" Height="45" Width="45" Margin="0,0,30, 0"/>
         </StackPanel>
-        
+
         <TextBlock Grid.Row="6" Grid.Column="0" Margin="10,0,0,0" FontWeight="Bold" VerticalAlignment="Bottom" FontSize="16" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="Postoji sedam delova. Instrukcije se menjaju za svaki deo. Obratite pažnju!"/>
         <Button Grid.Row="7" Name="explanationDalje" Click="explanationDalje_Click" IsDefault="True" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="90" Height="40" FontWeight="Bold" Margin="10,0,10,0" FontSize="20" Background="#7CFC00">Dalje ></Button>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="2" Margin="5, 0, 0, 0"/>
+
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="1" Margin="5, 0, 0, 0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="1" Margin="0, 0, 5, 0"/>
+
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="3" Margin="5, 0, 0, 0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="4" Margin="5, 0, 0, 0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Grid.Row="5" Margin="5, 0, 0, 0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="2" Margin="0, 0, 5, 0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="3" Margin="0, 0, 5, 0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="4" Margin="0, 0, 5, 0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="5" Margin="0, 0, 5, 0"/>
 
     </Grid>
 </Window>

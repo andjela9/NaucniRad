@@ -28,7 +28,7 @@ namespace NaucniRad.WPF
         {
             InitializeComponent();
             ispitanik = proslIspitanik;
-            ispitanik.SelfAssessment = 3;
+            //ispitanik.SelfAssessment = 3;
             //MessageBox.Show(ispitanik.ToString());
 
             try

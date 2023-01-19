@@ -23,9 +23,9 @@ namespace NaucniRad.WPF
         public Introduction(int ispId)
         {
             InitializeComponent();
-            MessageBox.Show("Prosledjen ID: " + ispId.ToString());
+            //MessageBox.Show("Prosledjen ID: " + ispId.ToString());
             id = ispId;
-            MessageBox.Show("Prosledjen ID: " + id.ToString());
+            //MessageBox.Show("Prosledjen ID: " + id.ToString());
 
         }
 

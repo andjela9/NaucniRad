@@ -9,7 +9,7 @@
     <Grid>
         <!--#region Definisanje grida-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="0.9*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -27,8 +27,8 @@
         <TextBlock Grid.Row="2" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="Fakultet:"/>
         <TextBlock Grid.Row="3" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="Pol:"/>
         <TextBlock Grid.Row="4" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="Smer:"/>
-        <TextBlock Grid.Row="5" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30"><Run Text="Da li ste osoba"/><LineBreak/><Run Text="sa invaliditetom:"/></TextBlock>
-        <Button Grid.Row="6" Name="ispitanikDalje" Click="ispitanikDaljeClick" Grid.Column="2" Margin="20, 20, 20, 20" FontWeight="Bold" FontSize="30" IsDefault="True" Background="#7CFC00">Dalje ></Button>
+        <TextBlock Grid.Row="5" Margin="15, 0, 0, 0" TextAlignment="Center" VerticalAlignment="Center" FontSize="30"><Run Text="Da li ste osoba"/><LineBreak/><Run Text="sa invaliditetom:"/></TextBlock>
+        <Button Grid.Row="6" Name="ispitanikDalje" Click="ispitanikDaljeClick" Grid.Column="2" Margin="90, 20, 20, 20" FontWeight="Bold" FontSize="30" IsDefault="True" Background="#7CFC00">Dalje ></Button>
 
 
        
