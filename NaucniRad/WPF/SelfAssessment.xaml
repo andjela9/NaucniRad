@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NaucniRad.WPF"
         mc:Ignorable="d"
-        Title="SelfAssessment" Height="450" Width="800">
+        Title="Samoprocena" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>

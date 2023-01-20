@@ -28,7 +28,7 @@ namespace NaucniRad.WPF
             InitializeComponent();
             prosledjenaSekcija = sekcija;
             ispitanikId = id;
-            Dugme.Focus();
+            Novo.Focus();
             //MessageBox.Show(prosledjenaSekcija.ToString());
             switch (sekcija)
             {
@@ -128,17 +128,39 @@ namespace NaucniRad.WPF
         //    this.OpenQuestionWindow();
         //}
 
-        private void Dugme_KeyDown(object sender, KeyEventArgs e)
+        //private void Dugme_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if(e.Key == Key.Space && e.IsDown)
+        //    {
+        //        MessageBox.Show("Kliknuto");
+        //        this.OpenQuestionWindow();
+        //    }
+        //}
+
+        //private void Dugme_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.OpenQuestionWindow();
+        //}
+
+        private void Novo_Click(object sender, RoutedEventArgs e)
+        {
+            QuestionWindow questionWindow = new QuestionWindow(prosledjenaSekcija, ispitanikId);
+            this.Close();
+            questionWindow.ShowDialog();
+        }
+
+        private void Novo_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Space)
             {
-                this.OpenQuestionWindow();
+                QuestionWindow questionWindow = new QuestionWindow(prosledjenaSekcija, ispitanikId);
+                this.Close();
+                questionWindow.ShowDialog();
             }
-        }
-
-        private void Dugme_Click(object sender, RoutedEventArgs e)
-        {
-            OpenQuestionWindow();
+            else
+            {
+                //MessageBox.Show("Kliknuto nesto drugo");
+            }
         }
     }
 }

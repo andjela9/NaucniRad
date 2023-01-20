@@ -48,31 +48,51 @@ namespace NaucniRad.WPF
             switch (sekcija)
             {
                 case 1:
-                    kategorijaLevoTxt.Text = "Osoba sa invaliditetom";
-                    kategorijaDesnoTxt.Text = "Osoba tipične populacije";
-                    foreach(Question q in questionOrder.section1Questions)
+                    kategorijaLevoTxt1.Text = "Osoba sa invaliditetom";
+                    kategorijaLevoTxt1.Foreground = Brushes.Chartreuse;
+                    kategorijaLevoTxt1.VerticalAlignment= VerticalAlignment.Center;
+                    kategorijaLevoTxt2.Text = "";
+                    kategorijaDesnoTxt1.Text = "Osoba tipične populacije";
+                    kategorijaDesnoTxt1.Foreground = Brushes.Chartreuse;
+                    kategorijaDesnoTxt1.VerticalAlignment = VerticalAlignment.Center;
+                    kategorijaDesnoTxt2.Text = "";
+                    foreach (Question q in questionOrder.section1Questions)
                     {
                         items.Add(q);
                     }
                     break;
                 case 2:
-                    kategorijaLevoTxt.Text = "LOŠE";
-                    kategorijaDesnoTxt.Text = "DOBRO";
+                    kategorijaLevoTxt1.Text = "LOŠE";
+                    kategorijaLevoTxt1.Foreground = Brushes.Blue;
+                    kategorijaLevoTxt1.VerticalAlignment = VerticalAlignment.Center;
+                    kategorijaLevoTxt2.Text = "";
+                    kategorijaDesnoTxt1.Text = "DOBRO";
+                    kategorijaDesnoTxt1.Foreground = Brushes.Blue;
+                    kategorijaDesnoTxt1.VerticalAlignment = VerticalAlignment.Center;
+                    kategorijaDesnoTxt2.Text = "";
                     foreach (Question q in questionOrder.section2Questions)
                     {
                         items.Add(q);
                     }
                     break;
                 case 3:
-                    if(ispitanikId % 2 == 0)
+                    kategorijaLevoTxt1.Foreground = Brushes.Blue;
+                    kategorijaLevoTxt2.Foreground = Brushes.Chartreuse;
+                    kategorijaDesnoTxt1.Foreground = Brushes.Blue;
+                    kategorijaDesnoTxt2.Foreground = Brushes.Chartreuse;
+                    if (ispitanikId % 2 == 0)
                     {
-                        kategorijaLevoTxt.Text = "LOŠE\nOsoba sa invaliditetom";
-                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba tipične populacije";
+                        kategorijaLevoTxt1.Text = "LOŠE";
+                        kategorijaLevoTxt2.Text = "Osoba sa invaliditetom";
+                        kategorijaDesnoTxt1.Text = "DOBRO";
+                        kategorijaDesnoTxt2.Text = "Osoba tipične populacije";
                     }
                     else
                     {
-                        kategorijaLevoTxt.Text = "LOŠE\nOsoba tipične populacije";
-                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba sa invaliditetom";
+                        kategorijaLevoTxt1.Text = "LOŠE";
+                        kategorijaLevoTxt2.Text = "Osoba tipične populacije";
+                        kategorijaDesnoTxt1.Text = "DOBRO";
+                        kategorijaDesnoTxt2.Text = "Osoba sa invaliditetom";
                     }
                     foreach (Question q in questionOrder.section3Questions)
                     {
@@ -80,15 +100,23 @@ namespace NaucniRad.WPF
                     }
                     break;
                 case 4:
+                    kategorijaLevoTxt1.Foreground = Brushes.Blue;
+                    kategorijaLevoTxt2.Foreground = Brushes.Chartreuse;
+                    kategorijaDesnoTxt1.Foreground = Brushes.Blue;
+                    kategorijaDesnoTxt2.Foreground = Brushes.Chartreuse;
                     if (ispitanikId % 2 == 0)
                     {
-                        kategorijaLevoTxt.Text = "LOŠE\nOsoba sa invaliditetom";
-                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba tipične populacije";
+                        kategorijaLevoTxt1.Text = "LOŠE";
+                        kategorijaLevoTxt2.Text = "Osoba sa invaliditetom";
+                        kategorijaDesnoTxt1.Text = "DOBRO";
+                        kategorijaDesnoTxt2.Text = "Osoba tipične populacije";
                     }
                     else
                     {
-                        kategorijaLevoTxt.Text = "LOŠE\nOsoba tipične populacije";
-                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba sa invaliditetom";
+                        kategorijaLevoTxt1.Text = "LOŠE";
+                        kategorijaLevoTxt2.Text = "Osoba tipične populacije";
+                        kategorijaDesnoTxt1.Text = "DOBRO";
+                        kategorijaDesnoTxt2.Text = "Osoba sa invaliditetom";
                     }
                     foreach (Question q in questionOrder.section4Questions)
                     {
@@ -96,8 +124,14 @@ namespace NaucniRad.WPF
                     }
                     break;
                 case 5:
-                    kategorijaLevoTxt.Text = "Osoba tipične populacije";
-                    kategorijaDesnoTxt.Text = "Osoba sa invaliditetom";
+                    kategorijaLevoTxt1.Text = "Osoba tipične populacije";
+                    kategorijaLevoTxt1.Foreground = Brushes.Chartreuse;
+                    kategorijaLevoTxt2.Text = "";
+                    kategorijaLevoTxt1.VerticalAlignment = VerticalAlignment.Center;
+                    kategorijaDesnoTxt1.Text = "Osoba sa invaliditetom";
+                    kategorijaDesnoTxt1.Foreground = Brushes.Chartreuse;
+                    kategorijaDesnoTxt2.Text = "";
+                    kategorijaDesnoTxt1.VerticalAlignment = VerticalAlignment.Center;
                     //TODO: ucitati items za sekciju 5
                     foreach (Question q in questionOrder.section1Questions)
                     {
@@ -105,15 +139,23 @@ namespace NaucniRad.WPF
                     }
                     break;
                 case 6:
-                    if(ispitanikId %2 == 0)
+                    kategorijaLevoTxt1.Foreground = Brushes.Blue;
+                    kategorijaLevoTxt2.Foreground = Brushes.Chartreuse;
+                    kategorijaDesnoTxt1.Foreground = Brushes.Blue;
+                    kategorijaDesnoTxt2.Foreground = Brushes.Chartreuse;
+                    if (ispitanikId %2 == 0)
                     {
-                        kategorijaLevoTxt.Text = "LOŠE\nOsoba tipične populacije";
-                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba sa invaliditetom";
+                        kategorijaLevoTxt1.Text = "LOŠE";
+                        kategorijaLevoTxt2.Text = "Osoba tipične populacije";
+                        kategorijaDesnoTxt1.Text = "DOBRO";
+                        kategorijaDesnoTxt2.Text = "Osoba sa invaliditetom";
                     }
                     else
                     {
-                        kategorijaLevoTxt.Text = "LOŠE\nOsoba sa invaliditetom";
-                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba tipične populacije";
+                        kategorijaLevoTxt1.Text = "LOŠE";
+                        kategorijaLevoTxt2.Text = "Osoba sa invaliditetom";
+                        kategorijaDesnoTxt1.Text = "DOBRO";
+                        kategorijaDesnoTxt2.Text = "Osoba tipične populacije";
                     }
                     foreach (Question q in questionOrder.section6Questions)
                     {
@@ -121,15 +163,23 @@ namespace NaucniRad.WPF
                     }
                     break;
                 case 7:
+                    kategorijaLevoTxt1.Foreground = Brushes.Blue;
+                    kategorijaLevoTxt2.Foreground = Brushes.Chartreuse;
+                    kategorijaDesnoTxt1.Foreground = Brushes.Blue;
+                    kategorijaDesnoTxt2.Foreground = Brushes.Chartreuse;
                     if (ispitanikId % 2 == 0)
                     {
-                        kategorijaLevoTxt.Text = "LOŠE\nOsoba tipične populacije";
-                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba sa invaliditetom";
+                        kategorijaLevoTxt1.Text = "LOŠE";
+                        kategorijaLevoTxt2.Text = "Osoba tipične populacije";
+                        kategorijaDesnoTxt1.Text = "DOBRO";
+                        kategorijaDesnoTxt2.Text = "Osoba sa invaliditetom";
                     }
                     else
                     {
-                        kategorijaLevoTxt.Text = "LOŠE\nOsoba sa invaliditetom";
-                        kategorijaDesnoTxt.Text = "DOBRO\nOsoba tipične populacije";
+                        kategorijaLevoTxt1.Text = "LOŠE";
+                        kategorijaLevoTxt2.Text = "Osoba sa invaliditetom";
+                        kategorijaDesnoTxt1.Text = "DOBRO";
+                        kategorijaDesnoTxt2.Text = "Osoba tipične populacije";
                     }
                     foreach (Question q in questionOrder.section7Questions)
                     {
@@ -137,8 +187,8 @@ namespace NaucniRad.WPF
                     }
                     break;
                 default:
-                    kategorijaDesnoTxt.Text = "";
-                    kategorijaLevoTxt.Text = "";
+                    kategorijaDesnoTxt1.Text = "";
+                    kategorijaLevoTxt1.Text = "";
                     break;
             }
             //POSLE OVOGA SE ITEMS NAPUNE KAKO TREBA, VIDLJIVO JE SPOLJA
