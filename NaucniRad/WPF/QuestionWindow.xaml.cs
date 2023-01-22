@@ -250,7 +250,7 @@ namespace NaucniRad.WPF
                 correct = 1;
             }
             
-            var newLine = $"{ans.Id},{ans.Section},{correct},{ans.Miliseconds}";
+            var newLine = $"\"{ans.Id}\",\"{ans.Section}\",\"{correct}\",\"{ans.Miliseconds}\"";
             csv.AppendLine(newLine);
             File.AppendAllText("../../AnswersExport.csv", csv.ToString());
         }
@@ -341,16 +341,16 @@ namespace NaucniRad.WPF
                         errors++;
                         answer.NumberOfErrors = errors;
                         X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        //stopwatch.Reset();
+                        //stopwatch.Start();
                     }
                     else if (e.Key == Key.I && e.IsDown && currentQuestion.Answer == "Disabled")
                     {
                         errors++;
                         answer.NumberOfErrors = errors;
                         X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        //stopwatch.Reset();
+                        //stopwatch.Start();
                     }
                     else
                     {
@@ -420,16 +420,16 @@ namespace NaucniRad.WPF
                         errors++;
                         answer.NumberOfErrors = errors;
                         X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        //stopwatch.Reset();
+                        //stopwatch.Start();
                     }
                     else if(e.Key == Key.I && e.IsDown && currentQuestion.Answer == "Bad")
                     {
                         errors++;
                         answer.NumberOfErrors = errors;
                         X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        //stopwatch.Reset();
+                        //stopwatch.Start();
                     }
                     else
                     {
@@ -526,16 +526,16 @@ namespace NaucniRad.WPF
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
                         else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
                         {
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         } 
                     }
 
@@ -625,16 +625,16 @@ namespace NaucniRad.WPF
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
                         else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
                         {
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
 
                     }
@@ -726,16 +726,16 @@ namespace NaucniRad.WPF
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
                         else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
                         {
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         } 
                     }
                     else
@@ -823,16 +823,16 @@ namespace NaucniRad.WPF
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
                         else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
                         {
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
                     }
                     break;
@@ -910,16 +910,16 @@ namespace NaucniRad.WPF
                         answer.NumberOfErrors = errors;
                         //pogresan odgovor
                         X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        //stopwatch.Reset();
+                        //stopwatch.Start();
                     }
                     else if (e.Key == Key.I && e.IsDown && currentQuestion.Answer == "Abled")
                     {
                         errors++;
                         answer.NumberOfErrors = errors;
                         X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        //stopwatch.Reset();
+                        //stopwatch.Start();
                     }
                     else
                     {
@@ -1013,16 +1013,16 @@ namespace NaucniRad.WPF
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
                         else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
                         {
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         } 
                     }
                     else
@@ -1110,16 +1110,16 @@ namespace NaucniRad.WPF
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
                         else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Disabled"))
                         {
                             errors++;
                             answer.NumberOfErrors = errors;
                             X.Visibility = Visibility.Visible;
-                            stopwatch.Reset();
-                            stopwatch.Start();
+                            //stopwatch.Reset();
+                            //stopwatch.Start();
                         }
                     }
                     break;
@@ -1211,16 +1211,16 @@ namespace NaucniRad.WPF
                         errors++;
                         answer.NumberOfErrors = errors;
                         X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        //stopwatch.Reset();
+                        //stopwatch.Start();
                     }
                     else if (e.Key == Key.I && e.IsDown && (currentQuestion.Answer == "Bad" || currentQuestion.Answer == "Abled"))
                     {
                         errors++;
                         answer.NumberOfErrors = errors;
                         X.Visibility = Visibility.Visible;
-                        stopwatch.Reset();
-                        stopwatch.Start();
+                        //stopwatch.Reset();
+                        //stopwatch.Start();
                     }
                     break;
 

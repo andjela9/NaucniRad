@@ -94,14 +94,14 @@ namespace NaucniRad.WPF
         {
             if (ValidateInput() != 0)
             {
-                MessageBox.Show(ValidateInput().ToString());
+                //MessageBox.Show(ValidateInput().ToString());
                 int id = ucitanaLista.Count() + 1;
                 Ispitanik fix = new Ispitanik(id, ispitanik.Age, ispitanik.College, ispitanik.Gender, ispitanik.Course,
                                                 ispitanik.Disability, ValidateInput());
                 ucitanaLista.Add(fix);
-                MessageBox.Show("Poslednji unos: \n" + "\nId: " + id + "\nGodine: " + ispitanik.Age + "\nFakultet: " + ispitanik.College
-                    + "\nPol: " + ispitanik.Gender + "\nSmer: " + ispitanik.Course + "\nOsoba sa invaliditetom: " + ispitanik.Disability
-                    + "\n Self Report: " + ValidateInput() + "\nBroj elemenata u listi: " + ucitanaLista.Count.ToString() + "\n");
+                //MessageBox.Show("Poslednji unos: \n" + "\nId: " + id + "\nGodine: " + ispitanik.Age + "\nFakultet: " + ispitanik.College
+                //    + "\nPol: " + ispitanik.Gender + "\nSmer: " + ispitanik.Course + "\nOsoba sa invaliditetom: " + ispitanik.Disability
+                //    + "\n Self Report: " + ValidateInput() + "\nBroj elemenata u listi: " + ucitanaLista.Count.ToString() + "\n");
 
                 //MessageBox.Show(ListToString(ispitaniciLista));
                 string s = "Lista iz programa\n";

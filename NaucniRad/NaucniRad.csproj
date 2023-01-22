@@ -62,6 +62,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\AllAnswers.cs" />
     <Compile Include="Model\Answer.cs" />
+    <Compile Include="Model\EntriesToExcel.cs" />
     <Compile Include="Model\Question.cs" />
     <Compile Include="Model\QuestionOrder.cs" />
     <Compile Include="Model\ScoreCalculator.cs" />

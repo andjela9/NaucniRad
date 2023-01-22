@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NaucniRad.WPF"
         mc:Ignorable="d"
-        Title="Unos" Height="700" Width="500">
+        Title="Unos" Height="650" Width="500">
     <Grid>
         <!--#region Definisanje grida-->
         <Grid.ColumnDefinitions>
@@ -19,7 +19,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="0.7*"/>
         </Grid.RowDefinitions>
         <!--#endregion-->
         <TextBlock Grid.Row="0" Margin="15,0,15,0" Grid.ColumnSpan="2" VerticalAlignment="Top" TextAlignment="Justify" FontWeight="Bold" FontSize="27" ><Run Text="Svi podaci su anonimni i biće"/><LineBreak/><Run Text="korišćeni  samo u svrhe istraživanja."/></TextBlock>
@@ -28,22 +28,22 @@
         <TextBlock Grid.Row="3" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="Pol:"/>
         <TextBlock Grid.Row="4" Margin="15" TextAlignment="Center" VerticalAlignment="Center" FontSize="30" Text="Smer:"/>
         <TextBlock Grid.Row="5" Margin="15, 0, 0, 0" TextAlignment="Center" VerticalAlignment="Center" FontSize="30"><Run Text="Da li ste osoba"/><LineBreak/><Run Text="sa invaliditetom:"/></TextBlock>
-        <Button Grid.Row="6" Name="ispitanikDalje" Click="ispitanikDaljeClick" Grid.Column="2" Margin="90, 20, 20, 20" FontWeight="Bold" FontSize="30" IsDefault="True" Background="#7CFC00">Dalje ></Button>
+        <Button Grid.Row="6" Name="ispitanikDalje" Click="ispitanikDaljeClick" Grid.Column="2" HorizontalAlignment="Right" Margin="0, 0, 20, 0" Height="40" Width="120" FontWeight="Bold" FontSize="25" IsDefault="True" Background="#7CFC00">Dalje ></Button>
 
 
        
         <!--<ComboBox Grid.Row="1" Grid.Column="1" Name="ageListBox" Margin="15, 30" SelectedItem="{Binding Path= Age}" ToolTip="Izaberite godine"/>-->
-        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="ageTxt" Margin="15,0,15,0" ToolTip="Upišite Vaše godine" Text="{Binding Path= Age}" Height="40"/>
+        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Name="ageTxt" Margin="25,0,25,0" ToolTip="Upišite Vaše godine" Text="{Binding Path= Age}" Height="40"/>
 
 
         <TextBlock Name="ageVal" Text="*Obavezno polje!" Grid.Row="1" Grid.Column="1" Margin="15, 80, 15, 0" Foreground="Red"  Visibility="Hidden" FontSize="20"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" Name="collegeListBox" Margin="15, 30" SelectedItem="{Binding Path= College}" ToolTip="Izaberite fakultet"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="collegeListBox" Margin="25, 30" SelectedItem="{Binding Path= College}" ToolTip="Izaberite fakultet"/>
         <TextBlock Name="collegeVal" Text="*Obavezno polje!" Grid.Row="2" Grid.Column="1" Margin="15, 90, 15, 0" Foreground="Red"  Visibility="Hidden" FontSize="20"/>
-        <ComboBox Grid.Row="3" Grid.Column="1" Name="genderListBox" Margin="15, 30" SelectedItem="{Binding Path= Gender}" ToolTip="Vaš pol"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" Name="genderListBox" Margin="25, 30" SelectedItem="{Binding Path= Gender}" ToolTip="Vaš pol"/>
         <TextBlock Name="genderVal" Text="*Obavezno polje!" Grid.Row="3" Grid.Column="1" Margin="15, 90, 15, 0" Foreground="Red"  Visibility="Hidden" FontSize="20"/>
-        <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="courseTxt" Margin="15,0,15,0" ToolTip="Upišite naziv smera koji pohađate" Text="{Binding Path= Course}" Height="40"/>
+        <TextBox Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Name="courseTxt" Margin="25,0,25,0" ToolTip="Upišite naziv smera koji pohađate" Text="{Binding Path= Course}" Height="40"/>
         <TextBlock Name="courseVal" Text="*Obavezno polje!" Grid.Row="4" Grid.Column="1" Margin="15, 80, 15, 0" Foreground="Red"  Visibility="Hidden" FontSize="20"/>
-        <ComboBox Grid.Row="5" Grid.Column="1" Name="disabilityListBox" Margin="15, 30" SelectedItem="{Binding Path= Disability}"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" Name="disabilityListBox" Margin="25, 30" SelectedItem="{Binding Path= Disability}"/>
         <TextBlock Name="disabilityVal" Text="*Obavezno polje!" Grid.Row="5" Grid.Column="1" Margin="15, 90, 15, 0" Foreground="Red"  Visibility="Hidden" FontSize="20"/>
 
 
