@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NaucniRad.WPF"
         mc:Ignorable="d"
-        Title="Pitanje" Height="450" Width="800" IsTabStop="False">
+        Title="Pitanje" Height="450" Width="800" IsTabStop="False" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

@@ -5,24 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NaucniRad.WPF"
         mc:Ignorable="d"
-        Title="Samoprocena" Height="450" Width="800">
+        Title="Samoprocena" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
             <RowDefinition/>
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Koja rečenica Vas najbolje opisuje" FontSize="18" FontWeight="Bold" Margin="20, 0, 10, 10"/>
-        <StackPanel Margin="10, 0, 0, 0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <RadioButton Name="n1" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Velika sklonost ka osobama tipične populacije u odnosu na osobe sa invaliditetom</RadioButton>
-            <RadioButton Name="n2" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Umerena sklonost ka osobama tipične populacije u odnosu na osobe sa invaliditetom</RadioButton>
-            <RadioButton Name="n3" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Blaga sklonost ka osobama tipične populacije u odnosu na osobe sa invaliditetom</RadioButton>
-            <RadioButton Name="n4" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Malo ili bez sklonosti prema jednoj od grupa</RadioButton>
-            <RadioButton Name="n5" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Blaga sklonost ka osobama sa invaliditetom u odnosu na osobe tipične populacije</RadioButton>
-            <RadioButton Name="n6" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Umerena sklonost ka osobama sa invaliditetom u odnosu na osobe tipične populacije</RadioButton>
-            <RadioButton Name="n7" GroupName="RadioBtnAnswer" FontSize="20" Margin="0, 5, 0, 25" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Velika sklonost ka osobama sa invaliditetom u odnosu na osobe tipične populacije</RadioButton>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.03*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Koja rečenica Vas najbolje opisuje" FontSize="18" FontWeight="Bold" Margin="20, 0, 10, 10"/>
+        <StackPanel Margin="0, 0, 0, 0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+            <RadioButton Name="n1" GroupName="RadioBtnAnswer" FontSize="19.5" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Velika sklonost ka osobama tipične populacije u odnosu na osobe sa invaliditetom</RadioButton>
+            <RadioButton Name="n2" GroupName="RadioBtnAnswer" FontSize="19.5" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Umerena sklonost ka osobama tipične populacije u odnosu na osobe sa invaliditetom</RadioButton>
+            <RadioButton Name="n3" GroupName="RadioBtnAnswer" FontSize="19.5" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Blaga sklonost ka osobama tipične populacije u odnosu na osobe sa invaliditetom</RadioButton>
+            <RadioButton Name="n4" GroupName="RadioBtnAnswer" FontSize="19.5" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Malo ili bez sklonosti prema jednoj od grupa</RadioButton>
+            <RadioButton Name="n5" GroupName="RadioBtnAnswer" FontSize="19.5" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Blaga sklonost ka osobama sa invaliditetom u odnosu na osobe tipične populacije</RadioButton>
+            <RadioButton Name="n6" GroupName="RadioBtnAnswer" FontSize="19.5" Margin="0, 5, 0, 10" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Umerena sklonost ka osobama sa invaliditetom u odnosu na osobe tipične populacije</RadioButton>
+            <RadioButton Name="n7" GroupName="RadioBtnAnswer" FontSize="19.5" Margin="0, 5, 0, 25" BorderThickness="2,2,2,2" BorderBrush="#FF363644">Velika sklonost ka osobama sa invaliditetom u odnosu na osobe tipične populacije</RadioButton>
         </StackPanel>
-        <Button Grid.Row="2" Name="selfAssesmentDalje" HorizontalAlignment="Right" VerticalAlignment="Top" Height="40" Margin="0, 0, 20, 10" Click="selfAssesmentDalje_Click"   FontWeight="Bold" FontSize="25" Background="#7CFC00" Width="120"  >Dalje ></Button>
+        <Button Grid.Row="2" Grid.Column="1" Name="selfAssesmentDalje" HorizontalAlignment="Right" VerticalAlignment="Top" Height="40" Margin="0, 0, 0, 0" Click="selfAssesmentDalje_Click"   FontWeight="Bold" FontSize="25" Background="#7CFC00" Width="120"  >Dalje ></Button>
 
     </Grid>
 

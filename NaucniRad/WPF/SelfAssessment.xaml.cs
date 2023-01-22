@@ -127,7 +127,7 @@ namespace NaucniRad.WPF
             }
             else
             {
-                MessageBox.Show("Izaberite jedan od izbora" + ValidateInput().ToString());
+                MessageBox.Show("Izaberite jedan od izbora");
             }
 
             

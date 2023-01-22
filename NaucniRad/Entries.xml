@@ -63,4 +63,31 @@
     <Disability>Ne</Disability>
     <SelfAssessment>1</SelfAssessment>
   </Ispitanik>
+  <Ispitanik>
+    <Id>8</Id>
+    <Age>23</Age>
+    <College>FTN</College>
+    <Gender>Ženski</Gender>
+    <Course>vfsz</Course>
+    <Disability>Da</Disability>
+    <SelfAssessment>4</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>9</Id>
+    <Age>45</Age>
+    <College>MFUNS</College>
+    <Gender>Ženski</Gender>
+    <Course>er</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>5</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>10</Id>
+    <Age>45</Age>
+    <College>MFUNS</College>
+    <Gender>Ne želim da se izjasnim</Gender>
+    <Course>vfs\</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>3</SelfAssessment>
+  </Ispitanik>
 </Ispitanici>
