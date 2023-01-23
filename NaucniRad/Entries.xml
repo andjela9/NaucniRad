@@ -90,4 +90,49 @@
     <Disability>Ne</Disability>
     <SelfAssessment>3</SelfAssessment>
   </Ispitanik>
+  <Ispitanik>
+    <Id>11</Id>
+    <Age>45</Age>
+    <College>MFUNS</College>
+    <Gender>Ženski</Gender>
+    <Course>bgda</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>1</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>12</Id>
+    <Age>67</Age>
+    <College>MFUNS</College>
+    <Gender>Ženski</Gender>
+    <Course>mgjcx</Course>
+    <Disability>Da</Disability>
+    <SelfAssessment>5</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>13</Id>
+    <Age>67</Age>
+    <College>MFUNS</College>
+    <Gender>Ženski</Gender>
+    <Course>mdy</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>6</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>14</Id>
+    <Age>45</Age>
+    <College>MFUNS</College>
+    <Gender>Ženski</Gender>
+    <Course>neki bas ali bas dugacak naziv smera i fakultet</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>4</SelfAssessment>
+  </Ispitanik>
+  <Ispitanik>
+    <Id>15</Id>
+    <Age>5</Age>
+    <College>MFUNS</College>
+    <Gender>Ženski</Gender>
+    <Course>bzd</Course>
+    <Disability>Ne</Disability>
+    <SelfAssessment>4</SelfAssessment>
+  </Ispitanik>
 </Ispitanici>

@@ -87,8 +87,10 @@ namespace NaucniRad.WPF
                     if (age <= 0)
                     {
                         ageTxt.BorderBrush = Brushes.Red;
-                        ageVal.Visibility = Visibility.Visible;
-                        ageVal.Text = "Godine moraju biti pozitivan broj";
+                        ageVal.Visibility = Visibility.Hidden;
+                        //ageVal.Text = "Godine moraju biti\npozitivan broj";
+                        //ageVal.VerticalAlignment = VerticalAlignment.Bottom;
+                        ageValMsg.Visibility = Visibility.Visible;
                         retVal = false;
                     }
                     else
@@ -99,8 +101,11 @@ namespace NaucniRad.WPF
                 }
                 else
                 {
-                    ageTxt.BorderBrush = Brushes.Red;
-                    ageVal.Text = "Godine moraju biti pozitivan broj";
+                    ageTxt.BorderBrush = Brushes.Red; 
+                    ageVal.Visibility = Visibility.Hidden;
+                    //ageVal.Text = "Godine moraju biti\npozitivan broj";
+                    //ageVal.VerticalAlignment = VerticalAlignment.Bottom;
+                    ageValMsg.Visibility = Visibility.Visible;
                     retVal = false;
                 }
             }
